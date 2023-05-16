@@ -1,2 +1,0 @@
-# Dyno.Platform
- 
