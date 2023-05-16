@@ -77,17 +77,18 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.Type(NHibernateUtil.Boolean);
                 prop.NotNullable(true);
             });
-            Property(e => e.LockoutEnd, prop => {
-                prop.Column(col =>
-                {
-                    col.Name("lockout_end");
-                    col.SqlType("timestamp with time zone");
-                });
-                prop.Type(NHibernateUtil.DateTimeOffset) ;
+            //Property(e => e.LockoutEnd, prop =>
+            //{
+            //    prop.Column(col =>
+            //    {
+            //        col.Name("lockout_end");
+            //        col.SqlType("timestamp with time zone");
+            //    });
+            //    prop.Type(NHibernateUtil.DateTimeOffset);
 
-                
-                
-            });
+
+
+            //});
             Property(e => e.AccessFailedCount, prop => {
                 prop.Column("access_failed_count");
                 prop.Type(NHibernateUtil.Int32);

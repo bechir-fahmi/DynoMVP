@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tAUG1GSJHcHDIypNQ5bKODyUCG0/sA0C9fDNQxgDIU2UAXcFr5lLfZhKqm7UQ81Qi/SjDW7sJw1lJFWWCmHpaw==",
+  "dgSpecHash": "XmXBMHW4FZdJcAvXsqljNnTRmilCHW0kb5G3+UMNiCDM2WKFoy+aKq1E3iqlr8Um+yLP3qzguGtzdSoNm531aQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj",
+  "projectFilePath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\21692\\.nuget\\packages\\confluent.kafka\\1.9.3\\confluent.kafka.1.9.3.nupkg.sha512",
     "C:\\Users\\21692\\.nuget\\packages\\librdkafka.redist\\1.9.2\\librdkafka.redist.1.9.2.nupkg.sha512",

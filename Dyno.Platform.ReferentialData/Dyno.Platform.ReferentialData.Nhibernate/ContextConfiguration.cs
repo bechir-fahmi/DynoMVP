@@ -1,4 +1,5 @@
 ﻿using Dyno.Platform.ReferentialData.Nhibernate.RoleData;
+using Dyno.Platform.ReferentialData.Nhibernate.TicketData;
 using Dyno.Platform.ReferentialData.Nhibernate.UserClaim;
 using Dyno.Platform.ReferentialData.Nhibernate.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
@@ -41,6 +42,12 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             mapper.AddMapping<EmployeeMap>();
             mapper.AddMapping<EmployerMap>();
             mapper.AddMapping<CasierMap>();
+            mapper.AddMapping<TicketMap>();
+            mapper.AddMapping<PayementMap>();
+            mapper.AddMapping<CategoryMap>();
+
+
+
 
             configuration.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
 
