@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Dyno.Platform.ReferentialData.WebApi.props" />
+</Project>

@@ -1,0 +1,122 @@
+﻿using AutoMapper;
+using Dyno.Platform.ReferentialData.Business.IServices;
+using Dyno.Platform.ReferentialData.BusinessModel.UserData;
+using Dyno.Platform.ReferentialData.DTO.UserData;
+using Dyno.Platform.ReferentialData.Nhibernate;
+using Dyno.Platform.ReferntialData.DataModel.UserData;
+using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
+using NHibernate;
+using NHibernate.Criterion;
+using NHibernate.Linq;
+using NHibernate.Util;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.Xml;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using static NHibernate.Engine.Query.CallableParser;
+
+namespace Dyno.Platform.ReferentialData.Business.Services
+{
+    public class EmployeeService : IEmployeeService
+    {
+
+        public readonly IMapperSession<EmployeeEntity> _mapperSession;
+        public readonly IMapper _mapper;
+        private readonly ISession _session;
+
+
+        public EmployeeService(IMapperSession<EmployeeEntity> mapperSession,
+            IMapper mapper, ISession session)
+
+        {
+            _mapperSession = mapperSession;
+            _mapper = mapper;
+            _session = session;
+
+
+
+        }
+
+
+        public void Create(EmployeeDTO employeeDTO)
+        {
+            Employee employee = _mapper.Map<Employee>(employeeDTO);
+            EmployeeEntity userEntity = _mapper.Map<EmployeeEntity>(employee);
+
+             _mapperSession.Add(userEntity);
+          
+        }
+
+        public  void Delete(Guid id)
+        {
+           EmployeeEntity employeeEntity=_mapperSession.GetById(id);
+            if (employeeEntity != null)
+            {
+                _mapperSession.Delete(employeeEntity);
+
+            }
+
+
+
+        }
+
+        public IList<EmployeeDTO> GetAll()
+        {
+           /* UserEntity userEntity = null;*/
+            
+            IList<EmployeeEntity> query = _session.QueryOver<EmployeeEntity>()
+                         .JoinQueryOver(e => e.User)
+                         .List<EmployeeEntity>().ToList();     
+            IList<Employee> employees = _mapper.Map<IList<Employee>>(query);
+            IList<EmployeeDTO> employeeDTOs = _mapper.Map<IList<EmployeeDTO>>(employees);
+           
+            return(List<EmployeeDTO>) employeeDTOs;
+
+
+        }
+
+        public EmployeeDTO GetByEmail(string email)
+        {
+            var query = _session.QueryOver<EmployeeEntity>()
+                         .Where(e => e.User.Email == email)
+                         .SingleOrDefault();
+            Employee  employee = _mapper.Map<Employee>(query);
+            EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
+            
+            return employeeDTO ;
+
+        }
+
+        public EmployeeDTO GetById(Guid id)
+        {
+            var query = _session.Query<EmployeeEntity>()
+                         .Where(e => e.Id == id)
+                         .SingleOrDefault();
+            Employee employee = _mapper.Map<Employee>(query);
+            EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
+            
+            return employeeDTO;
+        }
+
+
+        public EmployeeDTO GetByUserName(string name)
+        {
+            var query = _session.QueryOver<EmployeeEntity>()
+                         .Where(e => e.User.UserName == name)
+                         .SingleOrDefault();
+            Employee employee = _mapper.Map<Employee>(query);
+            EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
+
+            return employeeDTO;
+        }
+
+        public void Update(EmployeeDTO userDTO)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
