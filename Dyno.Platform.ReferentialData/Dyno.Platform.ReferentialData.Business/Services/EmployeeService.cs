@@ -4,6 +4,7 @@ using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferentialData.Nhibernate;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
+using FluentNHibernate.Data;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using NHibernate;
@@ -66,11 +67,16 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public IList<EmployeeDTO> GetAll()
         {
-           /* UserEntity userEntity = null;*/
-            
-            IList<EmployeeEntity> query = _session.QueryOver<EmployeeEntity>()
-                         .JoinQueryOver(e => e.User)
-                         .List<EmployeeEntity>().ToList();     
+           
+
+            var query = _session.QueryOver<EmployeeEntity>();
+
+            IList<EmployeeEntity> employeeEntities = query.List<EmployeeEntity>();
+            foreach (var entity in employeeEntities)
+            {
+                foreach (var employer in entity.Employers) { employer.Employees = null; }
+            }
+
             IList<Employee> employees = _mapper.Map<IList<Employee>>(query);
             IList<EmployeeDTO> employeeDTOs = _mapper.Map<IList<EmployeeDTO>>(employees);
            
@@ -82,8 +88,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         public EmployeeDTO GetByEmail(string email)
         {
             var query = _session.QueryOver<EmployeeEntity>()
-                         .Where(e => e.User.Email == email)
-                         .SingleOrDefault();
+                         .Where(e => e.User.Email == email);
+            EmployeeEntity employeeEntity=query.SingleOrDefault();
+            foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
             Employee  employee = _mapper.Map<Employee>(query);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
             
@@ -94,8 +101,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         public EmployeeDTO GetById(Guid id)
         {
             var query = _session.Query<EmployeeEntity>()
-                         .Where(e => e.Id == id)
-                         .SingleOrDefault();
+                         .Where(e => e.Id == id);
+            EmployeeEntity employeeEntity=query.SingleOrDefault();
+            foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
             Employee employee = _mapper.Map<Employee>(query);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
             
@@ -106,8 +114,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         public EmployeeDTO GetByUserName(string name)
         {
             var query = _session.QueryOver<EmployeeEntity>()
-                         .Where(e => e.User.UserName == name)
-                         .SingleOrDefault();
+                         .Where(e => e.User.UserName == name);
+            EmployeeEntity employeeEntity = query.SingleOrDefault();
+            foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
             Employee employee = _mapper.Map<Employee>(query);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
 

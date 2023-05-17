@@ -56,6 +56,7 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployerService, EmployerService>();
 builder.Services.AddScoped<IShopOwnerService, ShopOwnerService>();
 builder.Services.AddScoped<ICasierService, CasierService>();
+builder.Services.AddScoped<ITicketService, TicketService>();
 
 
 #endregion

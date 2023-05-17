@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Dyno.Platform.ReferentialData.BusinessModel.TicketData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
+using Dyno.Platform.ReferntialData.DataModel.PayementData;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,9 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.Mapping
             CreateMap<ShopOwner, ShopOwnerEntity>().ReverseMap();   
             CreateMap<Casier, CasierEntity>().ReverseMap();
             CreateMap<SuperUser, SuperUserEntity>().ReverseMap();
+            CreateMap<Category, CategoryEntity>().ReverseMap();
+            CreateMap<Ticket, TicketEntity>().ReverseMap();
+            CreateMap<Payement, PayementEntity>().ReverseMap();
         }
     }
 }

@@ -53,6 +53,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
        public void Add(T entity)
         {
             _session.Save(entity);
+            _session.Flush();
         }
 
         public void Delete(T entity)
@@ -64,6 +65,12 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
         {
             T entity=_session.Load<T>(id);
             return entity;
+        }
+
+        public IList<T> GetAll()
+        {
+            ICriteria criteria = _session.CreateCriteria(typeof(T));
+            return criteria.List<T>();
         }
     }
        

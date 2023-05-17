@@ -64,9 +64,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public IList<ShopOwnerDTO> GetAll()
         {
-            UserEntity userEntity = null;
-            var query = _session.QueryOver<ShopOwnerEntity>()
-                         .JoinAlias(e => e.User, () => userEntity);
+
+            var query = _session.QueryOver<ShopOwnerEntity>();
+                         
             IList<ShopOwnerEntity> shopOwnerEntities = query.List<ShopOwnerEntity>();
 
             IList<ShopOwner> shopOwners = _mapper.Map<IList<ShopOwner>>(shopOwnerEntities);

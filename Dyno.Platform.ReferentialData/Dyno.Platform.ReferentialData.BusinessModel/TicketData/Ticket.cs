@@ -8,8 +8,8 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.TicketData
 {
     public class Ticket
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        public double amont { get; set; }
+        public double amount { get; set; }
     }
 }

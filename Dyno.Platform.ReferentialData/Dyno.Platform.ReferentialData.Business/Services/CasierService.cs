@@ -59,8 +59,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         public IList<CasierDTO> GetAll()
         {
             UserEntity userEntity = null;
-            var query = _session.QueryOver<CasierEntity>()
-                         .JoinAlias(e => e.User, () => userEntity);
+            var query = _session.QueryOver<CasierEntity>();
             IList<CasierEntity> casierEntities = query.List<CasierEntity>();
 
             IList<Casier> casiers = _mapper.Map<IList<Casier>>(casierEntities);

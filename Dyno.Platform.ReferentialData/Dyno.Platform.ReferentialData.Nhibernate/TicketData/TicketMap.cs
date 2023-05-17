@@ -18,8 +18,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.TicketData
 
             Id(ticket => ticket.Id, x => {
                 x.Column("id");
-                x.Type(NHibernateUtil.Int32);
-                x.Generator(Generators.Increment);
+                x.Type(NHibernateUtil.Guid);
+                x.Generator(Generators.GuidComb);
 
 
             });

@@ -8,7 +8,7 @@ namespace Dyno.Platform.ReferentialData.DTO.TicketData
 {
     public class CategoryDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public TicketDTO Ticket { get; set; }
     }

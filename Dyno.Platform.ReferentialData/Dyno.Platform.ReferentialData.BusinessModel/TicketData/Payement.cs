@@ -9,7 +9,7 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.TicketData
 {
     public class Payement
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime date { get; set; }
         public int DayOfWork { get; set; }
         public Employee Employee { get; set; }

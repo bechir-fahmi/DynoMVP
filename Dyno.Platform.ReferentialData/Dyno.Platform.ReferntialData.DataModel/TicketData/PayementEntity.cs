@@ -10,7 +10,7 @@ namespace Dyno.Platform.ReferntialData.DataModel.PayementData
 {
     public class PayementEntity
     {
-        public virtual int Id { get; set; }
+        public virtual Guid Id { get; set; }
         public virtual DateTime Date { get; set; }
         public virtual int DayOfWork { get; set; }
         public virtual EmployeeEntity Employee { get; set; }

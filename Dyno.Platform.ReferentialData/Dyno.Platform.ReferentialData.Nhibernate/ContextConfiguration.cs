@@ -75,7 +75,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             var export = new SchemaUpdate(configuration);
             export.Execute(false, true);
 
-            var sessionFactory = configuration.BuildSessionFactory();
+             var sessionFactory = configuration.BuildSessionFactory();
 
             services.AddSingleton(sessionFactory);
             services.AddScoped(factory => sessionFactory.OpenSession());

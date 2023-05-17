@@ -8,7 +8,7 @@ namespace Dyno.Platform.ReferntialData.DataModel.PayementData
 {
     public class TicketEntity
     {
-        public virtual int Id { get; set; }
+        public virtual Guid Id { get; set; }
         public virtual string Name { get; set; }
         public virtual double amount { get; set; }
     }
