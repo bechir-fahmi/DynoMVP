@@ -82,7 +82,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
              var sessionFactory = configuration.BuildSessionFactory();
 
             services.AddSingleton(sessionFactory);
-            services.AddScoped(factory => sessionFactory.OpenSession());
+            services.AddScoped(factory => 
+            sessionFactory.OpenSession());
             services.AddScoped(typeof(IMapperSession<>), typeof(MapperSession<>));
           
                 

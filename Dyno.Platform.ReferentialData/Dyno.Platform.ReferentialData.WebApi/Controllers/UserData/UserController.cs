@@ -1,6 +1,7 @@
 ﻿using Dyno.Platform.ReferentialData.Business.IServices;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
 namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 {
@@ -30,7 +31,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         [HttpGet]
         [Route("GetById/{id}")]
 
-        public async Task<IActionResult> GetById(string id)
+        public async  Task<IActionResult> GetById(string id)
         {
             UserDTO userDTO = await _userService.GetById(id);
             return Ok(userDTO);
@@ -65,12 +66,28 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
         public async Task Add([FromBody] UserDTO userDTO)
         {
-              await _userService.Create(userDTO);
+               await _userService.Create(userDTO);
             
-
-            
+           
         }
 
+        [HttpPut]
+        [Route("UpdateUser")]
+
+        public async Task Update([FromBody] UserDTO userDTO)
+        {
+
+             await  _userService.Update(userDTO);
+
+            //if (result.IsCompletedSuccessfully)
+            //{
+            //    return Ok("Successful update");
+            //}
+            //else
+            //{
+            //    return BadRequest("Update failed");
+            //}
+        }
 
 
     }

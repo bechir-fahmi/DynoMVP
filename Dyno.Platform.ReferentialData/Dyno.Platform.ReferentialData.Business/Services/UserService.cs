@@ -59,12 +59,14 @@ namespace Dyno.Platform.ReferentialData.Business.Services
             return userDTO;
         }
        
-        public async void Delete(string id)
+        public  async void Delete(string id)
         {
-            UserEntity? userEntity=await _userManager.FindByIdAsync(id);
+            var userEntity= await _userManager.FindByIdAsync(id);
             if (userEntity != null)
             {
-                 var result =_userManager.DeleteAsync(userEntity);
+                 
+                  _userManager.DeleteAsync(userEntity);
+                
             }
 
         }
@@ -82,9 +84,16 @@ namespace Dyno.Platform.ReferentialData.Business.Services
             return userDTO;
         }
 
-        public void Update(UserDTO userDTO)
+        public async Task Update(UserDTO userDTO)
         {
-            throw new NotImplementedException();
+            User user = _mapper.Map<User>(userDTO);
+            UserEntity userEntity = _mapper.Map<UserEntity>(user);
+            var result= await  _userManager.UpdateAsync(userEntity);
+
+            
+
+
+
         }
 
         public async Task<UserDTO> GetByEmail(string email)

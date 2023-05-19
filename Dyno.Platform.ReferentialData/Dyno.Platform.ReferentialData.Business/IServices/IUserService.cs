@@ -15,7 +15,7 @@ namespace Dyno.Platform.ReferentialData.Business.IServices
         Task<UserDTO> GetByUserName(string name);
         Task<UserDTO> GetByEmail(string email);
         Task Create(UserDTO entity);
-        void Update(UserDTO entity);
+        Task Update(UserDTO entity);
         void Delete(string id);
 
     }

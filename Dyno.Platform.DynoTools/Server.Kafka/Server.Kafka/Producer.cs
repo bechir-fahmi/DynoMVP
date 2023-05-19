@@ -26,7 +26,7 @@ namespace Server.Kafka
 
         public async void sendMessage(T message, CancellationToken cancellationToken)
         {
-            await _kafkaProducer.ProduceAsync(Topic, new Message<Null, byte[]>()
+           await _kafkaProducer.ProduceAsync(Topic, new Message<Null, byte[]>()
             {
                 Value = KafkaMessage<T>.TCSerialize(message)
             }, cancellationToken);
