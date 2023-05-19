@@ -43,7 +43,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         }
 
 
-        public void Create(EmployeeDTO employeeDTO)
+        public async Task Create(EmployeeDTO employeeDTO)
         {
             Employee employee = _mapper.Map<Employee>(employeeDTO);
             EmployeeEntity userEntity = _mapper.Map<EmployeeEntity>(employee);
@@ -77,7 +77,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
                 foreach (var employer in entity.Employers) { employer.Employees = null; }
             }
 
-            IList<Employee> employees = _mapper.Map<IList<Employee>>(query);
+            IList<Employee> employees = _mapper.Map<IList<Employee>>(employeeEntities);
             IList<EmployeeDTO> employeeDTOs = _mapper.Map<IList<EmployeeDTO>>(employees);
            
             return(List<EmployeeDTO>) employeeDTOs;
@@ -87,11 +87,11 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public EmployeeDTO GetByEmail(string email)
         {
-            var query = _session.QueryOver<EmployeeEntity>()
+            var query = _session.Query<EmployeeEntity>()
                          .Where(e => e.User.Email == email);
             EmployeeEntity employeeEntity=query.SingleOrDefault();
             foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
-            Employee  employee = _mapper.Map<Employee>(query);
+            Employee  employee = _mapper.Map<Employee>(employeeEntity);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
             
             return employeeDTO ;
@@ -102,9 +102,10 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
             var query = _session.Query<EmployeeEntity>()
                          .Where(e => e.Id == id);
-            EmployeeEntity employeeEntity=query.SingleOrDefault();
+            EmployeeEntity employeeEntity=query.Single();
             foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
-            Employee employee = _mapper.Map<Employee>(query);
+            
+            Employee employee = _mapper.Map<Employee>(employeeEntity);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
             
             return employeeDTO;
@@ -113,11 +114,11 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public EmployeeDTO GetByUserName(string name)
         {
-            var query = _session.QueryOver<EmployeeEntity>()
+            var query = _session.Query<EmployeeEntity>()
                          .Where(e => e.User.UserName == name);
             EmployeeEntity employeeEntity = query.SingleOrDefault();
             foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
-            Employee employee = _mapper.Map<Employee>(query);
+            Employee employee = _mapper.Map<Employee>(employeeEntity);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
 
             return employeeDTO;

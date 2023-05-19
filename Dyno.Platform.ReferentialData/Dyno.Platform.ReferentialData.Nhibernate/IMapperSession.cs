@@ -18,6 +18,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
         void CloseTransaction();
         void  Add(T entity);
         void Delete(T entity);
+        void Update(T entity);
         T GetById(Guid id);
        IList<T> GetAll();
         IQueryable<T> Entity { get; }

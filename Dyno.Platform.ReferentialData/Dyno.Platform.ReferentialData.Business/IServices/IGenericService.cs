@@ -13,9 +13,10 @@ namespace Dyno.Platform.ReferentialData.Business.IServices
         T GetById(Guid id);
         T GetByUserName(string name);
         T GetByEmail(string email);
-        void Create(T entity);
+        Task Create(T entity);
         void Update(T entity);
         void Delete(Guid id);
+
 
     }
 }

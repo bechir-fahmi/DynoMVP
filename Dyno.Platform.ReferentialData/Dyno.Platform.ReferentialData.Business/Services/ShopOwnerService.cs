@@ -40,7 +40,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         }
 
 
-        public void Create(ShopOwnerDTO shopOwnerDTO)
+        public async Task Create(ShopOwnerDTO shopOwnerDTO)
         {
             ShopOwner shopOwner = _mapper.Map<ShopOwner>(shopOwnerDTO);
             ShopOwnerEntity shopOwnerEntity = _mapper.Map<ShopOwnerEntity>(shopOwner);

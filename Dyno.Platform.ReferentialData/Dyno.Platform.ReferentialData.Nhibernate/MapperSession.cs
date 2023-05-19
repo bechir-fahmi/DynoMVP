@@ -59,12 +59,19 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
         public void Delete(T entity)
         {
            _session.Delete(entity);
+            _session.Flush();
         }
 
         public T GetById(Guid id)
         {
             T entity=_session.Load<T>(id);
             return entity;
+        }
+
+        public void Update(T entity)
+        {
+              _session.Update(entity);
+            _session.Flush();
         }
 
         public IList<T> GetAll()

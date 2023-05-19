@@ -88,6 +88,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
             User user = _mapper.Map<User>(userDTO);
             UserEntity userEntity = _mapper.Map<UserEntity>(user);
+            
             var result= await  _userManager.UpdateAsync(userEntity);
 
             

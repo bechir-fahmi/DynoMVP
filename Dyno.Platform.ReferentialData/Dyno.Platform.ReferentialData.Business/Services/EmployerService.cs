@@ -21,21 +21,31 @@ namespace Dyno.Platform.ReferentialData.Business.Services
     {
         public readonly IMapperSession<EmployerEntity> _mapperSession;
         public readonly IMapper _mapper;
-        private readonly ISession _session;
-        public EmployerService(IMapperSession<EmployerEntity> mapperSession,
+        public readonly ISession _session;
+        public readonly UserManager<UserEntity> _userManager;
+
+        public EmployerService(IMapperSession<EmployerEntity> mapperSession, UserManager<UserEntity> userManager,
             IMapper mapper, ISession session)
 
         {
             _mapperSession = mapperSession;
             _mapper = mapper;
             _session = session;
+            _userManager= userManager;
         }
-        public void Create(EmployerDTO entity)
+        public async Task Create(EmployerDTO entity)
         {
             Employer employer = _mapper.Map<Employer>(entity);
-            EmployerEntity userEntity = _mapper.Map<EmployerEntity>(employer);
+            EmployerEntity employerEntity = _mapper.Map<EmployerEntity>(employer);
 
-            _mapperSession.Add(userEntity);
+            //User user = _mapper.Map<User>(entity.User);
+            //UserEntity userEntity = _mapper.Map<UserEntity>(user);
+            //_userManager.CreateAsync(userEntity, userEntity.PasswordHash);
+            
+          
+            
+            _mapperSession.Add(employerEntity);
+            
         }
 
         public void Delete(Guid id)
@@ -52,7 +62,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         }
 
-        [Obsolete]
+        
         public IList<EmployerDTO> GetAll()
         {
             
@@ -74,7 +84,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
             var query=_session.Query<EmployerEntity>()
                 .Where(e=>e.User.Email==email);
-           EmployerEntity employerEntity=query.Single<EmployerEntity>();
+           EmployerEntity employerEntity=query.Single();
             
             foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
 
@@ -114,7 +124,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public void Update(EmployerDTO entity)
         {
-            throw new NotImplementedException();
+            Employer employer = _mapper.Map<Employer>(entity);
+            EmployerEntity employerEntity=_mapper.Map<EmployerEntity>(employer);
+            _mapperSession.Update(employerEntity);
         }
        
 

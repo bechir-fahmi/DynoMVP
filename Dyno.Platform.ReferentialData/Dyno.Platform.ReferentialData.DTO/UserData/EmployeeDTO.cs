@@ -9,8 +9,7 @@ namespace Dyno.Platform.ReferentialData.DTO.UserData
 {
     public class EmployeeDTO
     {
-        public Guid    Id { get; set; }
-        
+        public Guid Id { get; set; }
         public String? Adress { get; set; }
         public double Balance { get; set; }
         public UserDTO User { get; set; }

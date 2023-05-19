@@ -34,7 +34,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         }
 
 
-        public void Create(CasierDTO casierDTO)
+        public async Task Create(CasierDTO casierDTO)
         {
             Casier casier = _mapper.Map<Casier>(casierDTO);
             CasierEntity casierEntity = _mapper.Map<CasierEntity>(casier);

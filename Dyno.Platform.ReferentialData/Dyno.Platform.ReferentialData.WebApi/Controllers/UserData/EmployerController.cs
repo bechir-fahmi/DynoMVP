@@ -30,9 +30,9 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
         [HttpPost]
         [Route("AddEmployer")]
-        public IActionResult Add([FromBody] EmployerDTO employerDTO)
+        public  IActionResult Add([FromBody] EmployerDTO employerDTO)
         {
-            _employerService.Create(employerDTO);
+             _employerService.Create(employerDTO);
 
             return Ok(employerDTO);
 
@@ -66,10 +66,18 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpDelete]
-        [Route("DeleteUser/{id}")]
+        [Route("DeleteEmployer/{id}")]
         public void Delete(Guid id)
         {
             _employerService.Delete(id);
+        }
+
+
+        [HttpPut]
+        [Route("UpdateEmployer")]
+        public void Update(EmployerDTO employerDTO)
+        {
+            _employerService.Update(employerDTO);
         }
     }
 }
