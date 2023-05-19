@@ -34,6 +34,155 @@
           }
         }
       },
+      "CoreSharp.Common/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.Common.Extensions": "0.7.1",
+          "Microsoft.CSharp": "4.7.0",
+          "SimpleInjector": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.Common.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.Common.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.Common.Abstractions/0.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.Common.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.Common.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.Common.Extensions/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.Common.Abstractions": "0.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.Common.Extensions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.Common.Extensions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.Cqrs/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.Common": "0.7.1",
+          "CoreSharp.Cqrs.Abstractions": "0.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.Cqrs.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.Cqrs.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.Cqrs.Abstractions/0.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.Cqrs.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.Cqrs.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.DataAccess/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.DataAccess.Abstractions": "0.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.DataAccess.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.DataAccess.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.DataAccess.Abstractions/0.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.DataAccess.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.DataAccess.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.NHibernate/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.Common": "0.7.1",
+          "CoreSharp.Cqrs": "0.7.1",
+          "CoreSharp.DataAccess": "0.7.1",
+          "FluentNHibernate": "3.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.9",
+          "Microsoft.Extensions.Logging": "3.1.9",
+          "NHibernate": "5.3.0",
+          "NHibernate.Extensions": "2.1.2",
+          "Newtonsoft.Json": "12.0.2",
+          "Serilog.Extensions.Logging": "3.0.1",
+          "SimpleInjector": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/CoreSharp.NHibernate.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CoreSharp.NHibernate.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "CoreSharp.NHibernate.PostgreSQL/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "CoreSharp.NHibernate": "0.7.1",
+          "Npgsql": "4.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/CoreSharp.NHibernate.PostgreSQL.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/CoreSharp.NHibernate.PostgreSQL.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "FluentMigrator/3.3.2": {
         "type": "package",
         "dependencies": {
@@ -471,6 +620,22 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/3.1.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "3.1.9"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
@@ -960,6 +1125,20 @@
           "lib/net7.0/NHibernate.AspNetCore.Identity.dll": {}
         }
       },
+      "NHibernate.Extensions/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Iesi.Collections": "4.0.4",
+          "Microsoft.CSharp": "4.3.0",
+          "NHibernate": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NHibernate.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NHibernate.Extensions.dll": {}
+        }
+      },
       "Npgsql/7.0.4": {
         "type": "package",
         "dependencies": {
@@ -1208,6 +1387,55 @@
           }
         }
       },
+      "Serilog/2.8.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Serilog.Extensions.Logging/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Serilog": "2.8.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SimpleInjector/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/SimpleInjector.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/SimpleInjector.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SmtpServer/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -1281,6 +1509,39 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
+        }
+      },
+      "System.Collections.NonGeneric/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        }
+      },
+      "System.ComponentModel/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.ComponentModel.dll": {}
         }
       },
       "System.ComponentModel.Annotations/4.4.1": {
@@ -2651,6 +2912,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "CoreSharp.NHibernate.PostgreSQL": "0.7.1",
           "Dyno.Platform.ReferentialData.DTO": "1.0.0",
           "Dyno.Platform.ReferntialData.DataModel": "1.0.0",
           "FluentMigrator": "3.3.2",
@@ -2716,6 +2978,123 @@
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
         "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "CoreSharp.Common/0.7.1": {
+      "sha512": "EciiLNwA+PPRw/bd56ju2ekKiOYB/F9Pe6p3ane75x5974nRxk34/8H3NCSpvFTwZY3kHuBdjRC+M/pzMXx+WQ==",
+      "type": "package",
+      "path": "coresharp.common/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.common.0.7.1.nupkg.sha512",
+        "coresharp.common.nuspec",
+        "lib/netstandard2.0/CoreSharp.Common.dll",
+        "lib/netstandard2.0/CoreSharp.Common.pdb"
+      ]
+    },
+    "CoreSharp.Common.Abstractions/0.7.1": {
+      "sha512": "lM06XNsZ+srMoKKrjeVGSn0UK2pqMxtwR4gMTwIVg2LEnkzSRwkfzvjyNovdG1WYhOCiOY9J0MA8Qt2Xw10qtQ==",
+      "type": "package",
+      "path": "coresharp.common.abstractions/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.common.abstractions.0.7.1.nupkg.sha512",
+        "coresharp.common.abstractions.nuspec",
+        "lib/netstandard2.0/CoreSharp.Common.Abstractions.dll",
+        "lib/netstandard2.0/CoreSharp.Common.Abstractions.pdb"
+      ]
+    },
+    "CoreSharp.Common.Extensions/0.7.1": {
+      "sha512": "fO7A+E/0ndpCf61lo5i/YFhgNcQjz3sOGs9Ot53MeG4KXDF3Kf+kNoPmFTilGN7KlpnTHg9MT22wtL22G5S/aA==",
+      "type": "package",
+      "path": "coresharp.common.extensions/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.common.extensions.0.7.1.nupkg.sha512",
+        "coresharp.common.extensions.nuspec",
+        "lib/netstandard2.0/CoreSharp.Common.Extensions.dll",
+        "lib/netstandard2.0/CoreSharp.Common.Extensions.pdb"
+      ]
+    },
+    "CoreSharp.Cqrs/0.7.1": {
+      "sha512": "1RhNBLWrrn3OT55wUq3/UHnhmff2J75tCGniVb8UAHyz4IeToATk+aekA43WlBOry+rc6H3ST03KZxJhdkV3VQ==",
+      "type": "package",
+      "path": "coresharp.cqrs/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.cqrs.0.7.1.nupkg.sha512",
+        "coresharp.cqrs.nuspec",
+        "lib/netstandard2.0/CoreSharp.Cqrs.dll",
+        "lib/netstandard2.0/CoreSharp.Cqrs.pdb"
+      ]
+    },
+    "CoreSharp.Cqrs.Abstractions/0.7.1": {
+      "sha512": "BtFfDiZDfPRkrmvGDTaCC9K9Eg7G5pl4qYR8yOn0BYvxy34qZse5jV6H9o4WVvrkKiTuv7+wjo9sN8++Btkwfg==",
+      "type": "package",
+      "path": "coresharp.cqrs.abstractions/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.cqrs.abstractions.0.7.1.nupkg.sha512",
+        "coresharp.cqrs.abstractions.nuspec",
+        "lib/netstandard2.0/CoreSharp.Cqrs.Abstractions.dll",
+        "lib/netstandard2.0/CoreSharp.Cqrs.Abstractions.pdb"
+      ]
+    },
+    "CoreSharp.DataAccess/0.7.1": {
+      "sha512": "D4vNtWt/EHuC1SwLZVAMwQQclfqN/RA5BIvOdkkg3ofWmAYCkuq7N65ouq2grWKM7FgkXieDom9yjwda3YY/+g==",
+      "type": "package",
+      "path": "coresharp.dataaccess/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.dataaccess.0.7.1.nupkg.sha512",
+        "coresharp.dataaccess.nuspec",
+        "lib/netstandard2.0/CoreSharp.DataAccess.dll",
+        "lib/netstandard2.0/CoreSharp.DataAccess.pdb"
+      ]
+    },
+    "CoreSharp.DataAccess.Abstractions/0.7.1": {
+      "sha512": "d8uCKuy/UecqJVxaKausfuZZhf9J1NAyvneP90JZgmc2EEr9qOHyqJezXwvuL+I4fmmWfU4r5/3CzrcVWdW5yg==",
+      "type": "package",
+      "path": "coresharp.dataaccess.abstractions/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.dataaccess.abstractions.0.7.1.nupkg.sha512",
+        "coresharp.dataaccess.abstractions.nuspec",
+        "lib/netstandard2.0/CoreSharp.DataAccess.Abstractions.dll",
+        "lib/netstandard2.0/CoreSharp.DataAccess.Abstractions.pdb"
+      ]
+    },
+    "CoreSharp.NHibernate/0.7.1": {
+      "sha512": "2jMRfhvtEFOgffrJmnLks7g6GkerI/cww5XrSc3gHDvrsX3bKNDg94+yIgphJw5NGsIHzU0Hn06HfNSgK/zYSQ==",
+      "type": "package",
+      "path": "coresharp.nhibernate/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.nhibernate.0.7.1.nupkg.sha512",
+        "coresharp.nhibernate.nuspec",
+        "lib/netstandard2.0/CoreSharp.NHibernate.dll",
+        "lib/netstandard2.0/CoreSharp.NHibernate.pdb"
+      ]
+    },
+    "CoreSharp.NHibernate.PostgreSQL/0.7.1": {
+      "sha512": "KuLrDYD+BtadG/ejbngkGpsGAiYzWQ66/vV6KWfLnRZ+LnWXRwYf11i1oJCiQOFMMRrZXtgkF0r+vzNx/QD/7w==",
+      "type": "package",
+      "path": "coresharp.nhibernate.postgresql/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coresharp.nhibernate.postgresql.0.7.1.nupkg.sha512",
+        "coresharp.nhibernate.postgresql.nuspec",
+        "lib/netstandard2.1/CoreSharp.NHibernate.PostgreSQL.dll",
+        "lib/netstandard2.1/CoreSharp.NHibernate.PostgreSQL.pdb"
       ]
     },
     "FluentMigrator/3.3.2": {
@@ -3192,6 +3571,22 @@
         "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder/3.1.9": {
+      "sha512": "BG6HcT7tARYakftqfQu+cLksgIWG1NdxMY+igI12hdZrUK+WjS973NiRyuao/U9yyTeM9NPwRnC61hCmG3G3jg==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/3.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.3.1.9.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
@@ -3859,6 +4254,18 @@
         "nhibernate.aspnetcore.identity.nuspec"
       ]
     },
+    "NHibernate.Extensions/2.1.2": {
+      "sha512": "sRhGbgZhCSjHmP3b6RsOJmw2sEa5s3a0mn7hGsdAxjqDrDvN836JiMMMxCH4VLaC+IckUeSjHu/Q7gnujSAgxQ==",
+      "type": "package",
+      "path": "nhibernate.extensions/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NHibernate.Extensions.dll",
+        "nhibernate.extensions.2.1.2.nupkg.sha512",
+        "nhibernate.extensions.nuspec"
+      ]
+    },
     "Npgsql/7.0.4": {
       "sha512": "7UVPYy2RP0ci04PED1tc9ZCaTw/DfSdSkLiGEFCAvwMwsgA/bAluj1liNzP1IpN0MFofnOF0cm1zJfmbEuCehg==",
       "type": "package",
@@ -4165,6 +4572,69 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
+    "Serilog/2.8.0": {
+      "sha512": "zjuKXW5IQws43IHX7VY9nURsaCiBYh2kyJCWLJRSWrTsx/syBKHV8MibWe2A+QH3Er0AiwA+OJmO3DhFJDY1+A==",
+      "type": "package",
+      "path": "serilog/2.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.pdb",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.pdb",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.pdb",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.pdb",
+        "lib/netstandard1.3/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.pdb",
+        "lib/netstandard2.0/Serilog.xml",
+        "serilog.2.8.0.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Extensions.Logging/3.0.1": {
+      "sha512": "U0xbGoZuxJRjE3C5vlCfrf9a4xHTmbrCXKmaA14cHAqiT1Qir0rkV7Xss9GpPJR3MRYH19DFUUqZ9hvWeJrzdQ==",
+      "type": "package",
+      "path": "serilog.extensions.logging/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.dll",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.xml",
+        "serilog.extensions.logging.3.0.1.nupkg.sha512",
+        "serilog.extensions.logging.nuspec"
+      ]
+    },
+    "SimpleInjector/5.1.0": {
+      "sha512": "y3Mo3pvKgLCU4cK1Q7OqSgQfArmILjS3CxPAgx0xl5cbDzG34jYu7vfCkQjj61tYtOQ/3Gc3WGVGMj6jCFChQg==",
+      "type": "package",
+      "path": "simpleinjector/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SimpleInjector.dll",
+        "lib/net45/SimpleInjector.xml",
+        "lib/net461/SimpleInjector.dll",
+        "lib/net461/SimpleInjector.xml",
+        "lib/netstandard1.0/SimpleInjector.dll",
+        "lib/netstandard1.0/SimpleInjector.xml",
+        "lib/netstandard1.3/SimpleInjector.dll",
+        "lib/netstandard1.3/SimpleInjector.xml",
+        "lib/netstandard2.0/SimpleInjector.dll",
+        "lib/netstandard2.0/SimpleInjector.xml",
+        "lib/netstandard2.1/SimpleInjector.dll",
+        "lib/netstandard2.1/SimpleInjector.xml",
+        "simpleinjector.5.1.0.nupkg.sha512",
+        "simpleinjector.nuspec",
+        "simpleinjector.png"
+      ]
+    },
     "SmtpServer/9.0.2": {
       "sha512": "+mGNmyjX+RceMaYhCK84iH8yt3ViM53N2Nyg1nAcb8Jue4Yl28iZCcoMgz1vYv4C/wqS12xMtLxjOS4bzLbd1w==",
       "type": "package",
@@ -4397,6 +4867,104 @@
         "ref/xamarinwatchos10/_._",
         "system.collections.concurrent.4.3.0.nupkg.sha512",
         "system.collections.concurrent.nuspec"
+      ]
+    },
+    "System.Collections.NonGeneric/4.3.0": {
+      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "type": "package",
+      "path": "system.collections.nongeneric/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Collections.NonGeneric.dll",
+        "lib/netstandard1.3/System.Collections.NonGeneric.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Collections.NonGeneric.dll",
+        "ref/netstandard1.3/System.Collections.NonGeneric.dll",
+        "ref/netstandard1.3/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/de/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/es/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/fr/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/it/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ja/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ko/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ru/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/zh-hans/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/zh-hant/System.Collections.NonGeneric.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.collections.nongeneric.4.3.0.nupkg.sha512",
+        "system.collections.nongeneric.nuspec"
+      ]
+    },
+    "System.ComponentModel/4.0.1": {
+      "sha512": "oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
+      "type": "package",
+      "path": "system.componentmodel/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.ComponentModel.dll",
+        "lib/netstandard1.3/System.ComponentModel.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.ComponentModel.dll",
+        "ref/netcore50/System.ComponentModel.xml",
+        "ref/netcore50/de/System.ComponentModel.xml",
+        "ref/netcore50/es/System.ComponentModel.xml",
+        "ref/netcore50/fr/System.ComponentModel.xml",
+        "ref/netcore50/it/System.ComponentModel.xml",
+        "ref/netcore50/ja/System.ComponentModel.xml",
+        "ref/netcore50/ko/System.ComponentModel.xml",
+        "ref/netcore50/ru/System.ComponentModel.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.xml",
+        "ref/netstandard1.0/System.ComponentModel.dll",
+        "ref/netstandard1.0/System.ComponentModel.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.4.0.1.nupkg.sha512",
+        "system.componentmodel.nuspec"
       ]
     },
     "System.ComponentModel.Annotations/4.4.1": {
@@ -7994,7 +8562,7 @@
       "projectName": "Dyno.Platform.ReferentialData.Business",
       "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\Dyno.Platform.ReferentialData.Business.csproj",
       "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\obj\\",
+      "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",

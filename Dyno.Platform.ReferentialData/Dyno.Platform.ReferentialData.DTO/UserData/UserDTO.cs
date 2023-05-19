@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿
+using NHibernate.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,7 @@ namespace Dyno.Platform.ReferentialData.DTO.UserData
 {
     public class UserDTO : IdentityUser
     {
-       
+        
+     
     }
 }

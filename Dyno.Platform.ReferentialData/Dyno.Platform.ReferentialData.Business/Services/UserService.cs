@@ -11,22 +11,22 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using NHibernate;
+using System.ComponentModel;
 
 namespace Dyno.Platform.ReferentialData.Business.Services
 {
     public class UserService : IUserService
     {
 
-        public readonly IMapperSession<UserEntity> _mapperSession;
+        
         public readonly IMapper _mapper;
         public readonly UserManager<UserEntity> _userManager;
        
 
-        public UserService(IMapperSession<UserEntity> mapperSession, 
-            IMapper mapper, UserManager<UserEntity> userManager)
+        public UserService(IMapper mapper, UserManager<UserEntity> userManager)
            
         { 
-            _mapperSession = mapperSession;
+            
             _mapper = mapper;
             _userManager = userManager;
             
@@ -61,10 +61,10 @@ namespace Dyno.Platform.ReferentialData.Business.Services
        
         public async void Delete(string id)
         {
-            UserEntity userEntity=await _userManager.FindByIdAsync(id);
+            UserEntity? userEntity=await _userManager.FindByIdAsync(id);
             if (userEntity != null)
             {
-                var result = await _userManager.DeleteAsync(userEntity);
+                 var result =_userManager.DeleteAsync(userEntity);
             }
 
         }
@@ -101,10 +101,9 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         public async Task Create(UserDTO userDTO)
         {
             User user=_mapper.Map<User>(userDTO);
-            UserEntity userEntity = _mapper.Map<UserEntity>(user);
- 
-           var result = await _userManager.CreateAsync(userEntity, userDTO.PasswordHash);
-           
+            UserEntity userEntity = _mapper.Map<UserEntity>(user);  
+            var result = await _userManager.CreateAsync(userEntity, userDTO.PasswordHash);
+                      
         }
 
        

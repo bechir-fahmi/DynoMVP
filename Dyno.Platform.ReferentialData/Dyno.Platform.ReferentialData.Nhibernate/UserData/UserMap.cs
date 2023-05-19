@@ -28,7 +28,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 id.Column("id");
                 id.Type(NHibernateUtil.StringClob);
                 id.Length(32);
-                id.Generator(Generators.TriggerIdentity);
+                
             });
             Property(e => e.UserName, prop => {
                 prop.Column("user_name");
@@ -77,14 +77,13 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.Type(NHibernateUtil.Boolean);
                 prop.NotNullable(true);
             });
-            Property(e => e.LockoutEnd, prop =>prop.Type<DateTimeOffsetType>()); 
-               
-            
-            Property(e => e.AccessFailedCount, prop => {
-                prop.Column("access_failed_count");
-                prop.Type(NHibernateUtil.Int32);
-                prop.NotNullable(true);
-            });
+            //Property(e => e.LockoutEnd, prop =>
+            //{
+            //    prop.Column("lockout_end");
+            //    prop.Type(NHibernateUtil.DateTime);
+            //    prop.NotNullable(false);
+
+            //});
             Property(e => e.ConcurrencyStamp, prop => {
                 prop.Column("concurrency_stamp");
                 prop.Type(NHibernateUtil.String);

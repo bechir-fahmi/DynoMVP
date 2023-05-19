@@ -13,10 +13,12 @@ using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
 using NHibernate.Connection;
 using NHibernate.Dialect;
+using NHibernate.Dialect.Schema;
 using NHibernate.Driver;
 using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
 using NHibernate.Tool.hbm2ddl;
+using NHibernate.Util;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace Dyno.Platform.ReferentialData.Nhibernate
@@ -65,6 +67,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
                 c.SchemaAction = SchemaAutoAction.Validate;
                 c.LogFormattedSql = true;
                 c.LogSqlInConsole = true;
+               
+                
                 
             });
 
@@ -74,7 +78,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
 
             var export = new SchemaUpdate(configuration);
             export.Execute(false, true);
-
+            
              var sessionFactory = configuration.BuildSessionFactory();
 
             services.AddSingleton(sessionFactory);

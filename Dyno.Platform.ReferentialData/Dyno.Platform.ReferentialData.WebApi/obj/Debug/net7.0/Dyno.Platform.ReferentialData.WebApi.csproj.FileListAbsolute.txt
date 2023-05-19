@@ -276,3 +276,14 @@ C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialD
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\NHibernate.AspNetCore.Identity.dll
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\NHibernate.NetCore.dll
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.Common.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.Common.Abstractions.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.Common.Extensions.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.Cqrs.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.Cqrs.Abstractions.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.DataAccess.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.DataAccess.Abstractions.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.NHibernate.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\CoreSharp.NHibernate.PostgreSQL.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\NHibernate.Extensions.dll
+C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.WebApi\bin\Debug\net7.0\SimpleInjector.dll

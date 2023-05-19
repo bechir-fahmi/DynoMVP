@@ -58,7 +58,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public IList<CasierDTO> GetAll()
         {
-            UserEntity userEntity = null;
+           
             var query = _session.QueryOver<CasierEntity>();
             IList<CasierEntity> casierEntities = query.List<CasierEntity>();
 

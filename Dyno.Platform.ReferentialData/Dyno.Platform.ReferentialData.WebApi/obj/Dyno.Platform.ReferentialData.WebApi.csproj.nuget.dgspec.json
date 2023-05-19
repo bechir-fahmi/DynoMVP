@@ -108,7 +108,7 @@
         "projectName": "Platform.MicroserviceBase",
         "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -180,7 +180,7 @@
         "projectName": "Server.Kafka",
         "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -261,7 +261,7 @@
         "projectName": "WatchDog",
         "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -639,6 +639,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "CoreSharp.NHibernate.PostgreSQL": {
+              "target": "Package",
+              "version": "[0.7.1, )"
+            },
             "FluentMigrator": {
               "target": "Package",
               "version": "[3.3.2, )"

@@ -31,12 +31,12 @@ builder.Services.AddHostedService<MicroserviceBaseWorker>();
 #region DataBase Config
 DatabaseConfig configdata = builder.Configuration.GetSection("ConnectionStrings").Get<DatabaseConfig>();
 builder.Services.AddNHibernate(configdata.Pgsqlconnection);
-builder.Services.AddDefaultIdentity<UserEntity>()
-    .AddRoles<RoleEntity>()
-    .AddHibernateStores();
-   
-  
+builder.Services.AddIdentity<UserEntity, RoleEntity>()
     
+    .AddHibernateStores();
+ 
+
+
 
 
 
@@ -72,6 +72,7 @@ builder.Services.AddSwaggerGen();
 
    
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
