@@ -39,7 +39,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetById/{id}")]
+        [Route("GetEmployerById/{id}")]
 
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -48,7 +48,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByUserName/{name}")]
+        [Route("GetEmployerByUserName/{name}")]
 
         public async Task<IActionResult> GetByUserName(string name)
         {
@@ -57,7 +57,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByEmail/{email}")]
+        [Route("GetEmployerByEmail/{email}")]
 
         public async Task<IActionResult> GetByEmail(string email)
         {

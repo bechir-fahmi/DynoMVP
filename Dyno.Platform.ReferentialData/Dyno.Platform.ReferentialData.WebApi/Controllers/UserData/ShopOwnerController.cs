@@ -27,7 +27,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetById/{id}")]
+        [Route("GetShopOwnerById/{id}")]
         public IActionResult GetById(Guid id) 
         {
             ShopOwnerDTO shopOwnerDTO= _shopOwnerService.GetById(id);
@@ -35,7 +35,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByUserName/{name}")]
+        [Route("GetShopOwnerByUserName/{name}")]
 
         public IActionResult GetByName(string name)
         {
@@ -44,7 +44,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByEmail/{email}")]
+        [Route("GetShopOwnerByEmail/{email}")]
 
         public IActionResult GetByEmail(string email) 
         {
@@ -70,6 +70,13 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
             _shopOwnerService.Delete(id);
         
+        }
+
+        [HttpPut]
+        [Route("UpdateShopOwner")]
+        public void Update([FromBody] ShopOwnerDTO shopOwnerDTO) 
+        {
+            _shopOwnerService.Update(shopOwnerDTO);
         }
 
 

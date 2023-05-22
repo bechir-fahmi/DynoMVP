@@ -39,7 +39,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetById/{id}")]
+        [Route("GetEmployeeById/{id}")]
 
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -48,7 +48,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByUserName/{name}")]
+        [Route("GetEmployeeByUserName/{name}")]
 
         public async Task<IActionResult> GetByUserName(string name)
         {
@@ -57,7 +57,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpGet]
-        [Route("GetByEmail/{email}")]
+        [Route("GetEmployeeByEmail/{email}")]
 
         public async Task<IActionResult> GetByEmail(string email)
         {
@@ -66,10 +66,17 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         }
 
         [HttpDelete]
-        [Route("DeleteUser/{id}")]
+        [Route("DeleteEmployee/{id}")]
         public void Delete(Guid id)
         {
             _employeeService.Delete(id);
+        }
+
+        [HttpPut]
+        [Route("UpdateEmployee")]
+        public void Update([FromBody] EmployeeDTO employeeDTO) 
+        {
+            _employeeService.Update(employeeDTO);
         }
     }
 }
