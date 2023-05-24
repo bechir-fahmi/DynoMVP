@@ -10,6 +10,6 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
     {
         public Guid Id { get; set; }
         public User User { get; set; }
-        public  ShopOwner ShopOwnerParent { get; set; }
+        public  ShopOwner ShopOwner { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Dyno.Platform.ReferentialData.BusinessModel.TicketData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
+using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
+using Dyno.Platform.ReferentialData.DTO.RoleData;
 using Dyno.Platform.ReferentialData.DTO.TicketData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using System;
@@ -24,6 +26,7 @@ namespace Dyno.Platform.ReferentialData.DTO.Mapping
             CreateMap<CategoryDTO, Category>().ReverseMap();
             CreateMap<TicketDTO, Ticket>().ReverseMap();
             CreateMap<PayementDTO, Payement>().ReverseMap();
+            CreateMap<RoleDTO,Role>().ReverseMap();
         }
     }
 }

@@ -57,18 +57,26 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
             Property(user => user.Balance, x =>
             {
 
-                x.Type(NHibernateUtil.Int64);
+                x.Type(NHibernateUtil.Double);
                 x.Column("Balance");
 
             });
 
-            ManyToOne(x => x.User, m
-                =>
+            ManyToOne(x => x.User, m =>
             {
                 m.Column("user_id");
                 m.NotNullable(true);
                 m.ForeignKey("fk_order_user");
             });
+
+            Bag(x => x.casierEntities, m =>
+            {
+                m.Key(k => k.Column("id_Shopowner"));
+                m.Cascade(Cascade.All);
+                m.Inverse(true);
+            }, map => map.OneToMany());
+
+
 
 
 

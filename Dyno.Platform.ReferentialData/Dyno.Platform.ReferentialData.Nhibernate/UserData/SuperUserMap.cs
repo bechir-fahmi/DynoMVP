@@ -18,7 +18,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
             Id(user => user.Id, x => {
                 x.Column("id");
                 x.Type(NHibernateUtil.Guid);
-                x.Generator(Generators.GuidComb);
+                
                 
             });
 

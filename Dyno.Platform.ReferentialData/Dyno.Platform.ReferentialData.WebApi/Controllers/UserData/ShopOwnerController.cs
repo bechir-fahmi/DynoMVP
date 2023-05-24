@@ -1,4 +1,4 @@
-﻿using Dyno.Platform.ReferentialData.Business.IServices;
+﻿using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +56,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
         [Route("AddShopOwner")]
         public IActionResult Create([FromBody] ShopOwnerDTO shopOwnerDTO)
         {
-            _shopOwnerService.Update(shopOwnerDTO);
+            _shopOwnerService.Create(shopOwnerDTO);
 
             return Ok(shopOwnerDTO);
 

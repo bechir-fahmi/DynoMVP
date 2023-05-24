@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyno.Platform.ReferentialData.Business.IServices
+namespace Dyno.Platform.ReferentialData.Business.IServices.IUserDataService
 {
     public interface IUserService
     {
-        List<UserDTO> GetAll(); 
-        Task<UserDTO> GetById(string id);    
+        List<UserDTO> GetAll();
+        Task<UserDTO> GetById(string id);
         Task<UserDTO> GetByUserName(string name);
         Task<UserDTO> GetByEmail(string email);
         Task Create(UserDTO entity);

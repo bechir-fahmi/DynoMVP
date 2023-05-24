@@ -10,6 +10,10 @@ using Dyno.Platform.ReferentialData.DTO.Mapping;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
 using NHibernate.AspNetCore.Identity;
+using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
+using Dyno.Platform.ReferentialData.Business.Services.UserDataService;
+using Dyno.Platform.ReferentialData.Business.IServices.IRoleDataService;
+using Dyno.Platform.ReferentialData.Business.Services.RoleDataService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +35,8 @@ builder.Services.AddHostedService<MicroserviceBaseWorker>();
 #region DataBase Config
 DatabaseConfig configdata = builder.Configuration.GetSection("ConnectionStrings").Get<DatabaseConfig>();
 builder.Services.AddNHibernate(configdata.Pgsqlconnection);
-builder.Services.AddIdentity<UserEntity, RoleEntity>()
-    
+builder.Services.AddDefaultIdentity<UserEntity>()
+    .AddRoles<RoleEntity>()
     .AddHibernateStores();
  
 
@@ -57,6 +61,8 @@ builder.Services.AddScoped<IEmployerService, EmployerService>();
 builder.Services.AddScoped<IShopOwnerService, ShopOwnerService>();
 builder.Services.AddScoped<ICasierService, CasierService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
+builder.Services.AddScoped<ISuperUserService,SuperUserService>();
+builder.Services.AddScoped<IRoleService,RoleService>();
 
 
 #endregion

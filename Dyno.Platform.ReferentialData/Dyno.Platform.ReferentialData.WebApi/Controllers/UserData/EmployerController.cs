@@ -1,4 +1,4 @@
-﻿using Dyno.Platform.ReferentialData.Business.IServices;
+﻿using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.Business.Services;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Microsoft.AspNetCore.Mvc;
@@ -75,8 +75,10 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
         [HttpPut]
         [Route("UpdateEmployer")]
-        public void Update(EmployerDTO employerDTO)
+        public void Update([FromBody]EmployerDTO employerDTO)
+
         {
+           
             _employerService.Update(employerDTO);
         }
     }

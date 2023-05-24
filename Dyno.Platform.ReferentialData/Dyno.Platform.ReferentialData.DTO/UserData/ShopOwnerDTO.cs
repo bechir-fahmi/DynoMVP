@@ -14,7 +14,9 @@ namespace Dyno.Platform.ReferentialData.DTO.UserData
         public String? Adress { get; set; }
         public String? PayementMethod { get; set; }
         public String? AdressFacturation { get; set; }
-        public float Balance { get; set; }
+        public double Balance { get; set; }
+
+        public IList<CasierDTO> CasierDTO { get; set; }
 
     }
 }

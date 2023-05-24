@@ -21,7 +21,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaim
                 id.Column("id");
                 id.Type(NHibernateUtil.String);
                 id.Length(32);
-                id.Generator(Generators.TriggerIdentity);
+               
             });
             Property(e => e.UserId, prop => {
                 prop.Column("user_id");

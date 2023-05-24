@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.DTO.RoleData
 {
-    internal class RoleDTO
+    public class RoleDTO :IdentityRole
     {
     }
 }

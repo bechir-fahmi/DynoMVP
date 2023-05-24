@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dyno.Platform.ReferentialData.Business.IServices;
+using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferentialData.Nhibernate;
@@ -17,7 +18,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using static NHibernate.Engine.Query.CallableParser;
 
-namespace Dyno.Platform.ReferentialData.Business.Services
+namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
 {
     public class ShopOwnerService : IShopOwnerService
     {
@@ -66,13 +67,13 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
 
             var query = _session.QueryOver<ShopOwnerEntity>();
-                         
+
             IList<ShopOwnerEntity> shopOwnerEntities = query.List<ShopOwnerEntity>();
 
             IList<ShopOwner> shopOwners = _mapper.Map<IList<ShopOwner>>(shopOwnerEntities);
             IList<ShopOwnerDTO> shopOwnerDTOs = _mapper.Map<IList<ShopOwnerDTO>>(shopOwners);
 
-            
+
             return shopOwnerDTOs;
 
 
@@ -80,12 +81,12 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public ShopOwnerDTO GetByEmail(string email)
         {
-            var query = _session.QueryOver<ShopOwnerEntity>()
+            var query = _session.Query<ShopOwnerEntity>()
                          .Where(e => e.User.Email == email)
                          .SingleOrDefault();
             ShopOwner shopOwner = _mapper.Map<ShopOwner>(query);
             ShopOwnerDTO shopOwnerDTO = _mapper.Map<ShopOwnerDTO>(shopOwner);
-            
+
             return shopOwnerDTO;
 
         }
@@ -97,28 +98,30 @@ namespace Dyno.Platform.ReferentialData.Business.Services
                          .SingleOrDefault();
             ShopOwner shopOwner = _mapper.Map<ShopOwner>(query);
             ShopOwnerDTO shopOwnerDTO = _mapper.Map<ShopOwnerDTO>(shopOwner);
-           
+
             return shopOwnerDTO;
         }
 
 
         public ShopOwnerDTO GetByUserName(string name)
         {
-            var query = _session.QueryOver<ShopOwnerEntity>()
+            var query = _session.Query<ShopOwnerEntity>()
                          .Where(e => e.User.UserName == name)
                          .SingleOrDefault();
             ShopOwner shopOwner = _mapper.Map<ShopOwner>(query);
             ShopOwnerDTO shopOwnerDTO = _mapper.Map<ShopOwnerDTO>(shopOwner);
-            
+
             return shopOwnerDTO;
         }
 
-        
-        public void Update(ShopOwnerDTO entity)
+
+        public async Task Update(ShopOwnerDTO entity)
         {
-            throw new NotImplementedException();
+           ShopOwner shopOwner=_mapper.Map<ShopOwner>(entity);
+            ShopOwnerEntity shopOwnerEntity= _mapper.Map<ShopOwnerEntity>(shopOwner);
+            _mapperSession.Update(shopOwnerEntity);
         }
 
-        
+
     }
 }

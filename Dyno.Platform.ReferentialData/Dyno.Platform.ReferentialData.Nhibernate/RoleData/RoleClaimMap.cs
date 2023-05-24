@@ -20,7 +20,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
                 id.Column("id");
                 id.Type(NHibernateUtil.String);
                 id.Length(32);
-                id.Generator(Generators.TriggerIdentity);
+                
             });
             Property(e => e.RoleId, prop => {
                 prop.Column("role_id");

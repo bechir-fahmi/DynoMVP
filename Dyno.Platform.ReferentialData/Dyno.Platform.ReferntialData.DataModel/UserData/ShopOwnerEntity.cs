@@ -19,8 +19,8 @@ namespace Dyno.Platform.ReferntialData.DataModel.UserData
         public virtual String? PayementMethod { get; set; }
         [Required]
         public virtual String? AdressFacturation { get; set; }
-        public virtual ICollection<CasierEntity>? casiers{ get; set; }
-        public virtual float Balance { get; set; }
+        public virtual IList<CasierEntity>? casierEntities { get; set; }
+        public virtual double Balance { get; set; }
 
     }
 }

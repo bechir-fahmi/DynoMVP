@@ -10,6 +10,6 @@ namespace Dyno.Platform.ReferntialData.DataModel.UserData
     {
         public virtual Guid Id { get; set; }
         public virtual UserEntity User { get; set; }
-        public virtual ShopOwnerEntity? ShopOwner { get; set; }
+        public virtual ShopOwnerEntity? ShopOwnerEntity { get; set; }
     }
 }

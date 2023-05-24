@@ -32,11 +32,12 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 m.ForeignKey("fk_order_user");
             });
 
+            
 
 
            
 
-            ManyToOne(user => user.ShopOwner, x =>
+            ManyToOne(user => user.ShopOwnerEntity, x =>
             {
                 x.Column("id_Shopowner");
                 x.Class(typeof(ShopOwnerEntity));

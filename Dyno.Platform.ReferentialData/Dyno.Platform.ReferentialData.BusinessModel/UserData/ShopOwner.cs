@@ -14,8 +14,8 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
         public String? Adress { get; set;  }
         public String? PayementMethod { get; set; }
         public String? AdressFacturation { get; set; }
-        public float Balance { get; set; }
-        public List<Casier>? casiers { get; set; }
+        public double Balance { get; set; }
+        public IList<Casier>? casiers { get; set; }
 
     }
 }

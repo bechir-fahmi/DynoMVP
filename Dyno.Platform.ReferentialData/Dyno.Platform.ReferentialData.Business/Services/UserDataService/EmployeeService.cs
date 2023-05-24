@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dyno.Platform.ReferentialData.Business.IServices;
+using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferentialData.Nhibernate;
@@ -20,7 +21,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using static NHibernate.Engine.Query.CallableParser;
 
-namespace Dyno.Platform.ReferentialData.Business.Services
+namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
 {
     public class EmployeeService : IEmployeeService
     {
@@ -48,13 +49,13 @@ namespace Dyno.Platform.ReferentialData.Business.Services
             Employee employee = _mapper.Map<Employee>(employeeDTO);
             EmployeeEntity userEntity = _mapper.Map<EmployeeEntity>(employee);
 
-             _mapperSession.Add(userEntity);
-          
+            _mapperSession.Add(userEntity);
+
         }
 
-        public  void Delete(Guid id)
+        public void Delete(Guid id)
         {
-           EmployeeEntity employeeEntity=_mapperSession.GetById(id);
+            EmployeeEntity employeeEntity = _mapperSession.GetById(id);
             if (employeeEntity != null)
             {
                 _mapperSession.Delete(employeeEntity);
@@ -67,7 +68,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public IList<EmployeeDTO> GetAll()
         {
-           
+
 
             var query = _session.QueryOver<EmployeeEntity>();
 
@@ -79,8 +80,8 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
             IList<Employee> employees = _mapper.Map<IList<Employee>>(employeeEntities);
             IList<EmployeeDTO> employeeDTOs = _mapper.Map<IList<EmployeeDTO>>(employees);
-           
-            return(List<EmployeeDTO>) employeeDTOs;
+
+            return (List<EmployeeDTO>)employeeDTOs;
 
 
         }
@@ -89,12 +90,12 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
             var query = _session.Query<EmployeeEntity>()
                          .Where(e => e.User.Email == email);
-            EmployeeEntity employeeEntity=query.SingleOrDefault();
+            EmployeeEntity employeeEntity = query.SingleOrDefault();
             foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
-            Employee  employee = _mapper.Map<Employee>(employeeEntity);
+            Employee employee = _mapper.Map<Employee>(employeeEntity);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
-            
-            return employeeDTO ;
+
+            return employeeDTO;
 
         }
 
@@ -102,12 +103,12 @@ namespace Dyno.Platform.ReferentialData.Business.Services
         {
             var query = _session.Query<EmployeeEntity>()
                          .Where(e => e.Id == id);
-            EmployeeEntity employeeEntity=query.Single();
+            EmployeeEntity employeeEntity = query.Single();
             foreach (var employer in employeeEntity.Employers) { employer.Employees = null; }
-            
+
             Employee employee = _mapper.Map<Employee>(employeeEntity);
             EmployeeDTO employeeDTO = _mapper.Map<EmployeeDTO>(employee);
-            
+
             return employeeDTO;
         }
 
@@ -124,7 +125,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services
             return employeeDTO;
         }
 
-        public void Update(EmployeeDTO userDTO)
+        public Task Update(EmployeeDTO userDTO)
         {
             throw new NotImplementedException();
         }

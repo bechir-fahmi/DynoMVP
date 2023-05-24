@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Dyno.Platform.ReferentialData.Business.IServices;
+using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferentialData.Nhibernate;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyno.Platform.ReferentialData.Business.Services
+namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
 {
     public class CasierService : ICasierService
     {
@@ -58,13 +58,13 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public IList<CasierDTO> GetAll()
         {
-           
+
             var query = _session.QueryOver<CasierEntity>();
             IList<CasierEntity> casierEntities = query.List<CasierEntity>();
 
             IList<Casier> casiers = _mapper.Map<IList<Casier>>(casierEntities);
             IList<CasierDTO> casierDTOs = _mapper.Map<IList<CasierDTO>>(casiers);
-            
+
             return casierDTOs;
 
 
@@ -72,12 +72,12 @@ namespace Dyno.Platform.ReferentialData.Business.Services
 
         public CasierDTO GetByEmail(string email)
         {
-            var query = _session.QueryOver<CasierEntity>()
+            var query = _session.Query<CasierEntity>()
                          .Where(e => e.User.Email == email)
                          .SingleOrDefault();
             Casier casier = _mapper.Map<Casier>(query);
             CasierDTO casierDTO = _mapper.Map<CasierDTO>(casier);
-           
+
             return casierDTO;
 
         }
@@ -89,25 +89,27 @@ namespace Dyno.Platform.ReferentialData.Business.Services
                          .SingleOrDefault();
             Casier casier = _mapper.Map<Casier>(query);
             CasierDTO casierDTO = _mapper.Map<CasierDTO>(casier);
-           
+
             return casierDTO;
         }
 
 
         public CasierDTO GetByUserName(string name)
         {
-            var query = _session.QueryOver<CasierEntity>()
+            var query = _session.Query<CasierEntity>()
                          .Where(e => e.User.UserName == name)
                          .SingleOrDefault();
             Casier casier = _mapper.Map<Casier>(query);
             CasierDTO casierDTO = _mapper.Map<CasierDTO>(casier);
-            
+
             return casierDTO;
         }
 
-        public void Update(CasierDTO userDTO)
+        public async Task Update(CasierDTO userDTO)
         {
-            throw new NotImplementedException();
+            Casier casier=_mapper.Map<Casier>(userDTO);
+            CasierEntity casierEntity=_mapper.Map<CasierEntity>(casier);
+            _mapperSession.Update(casierEntity);
         }
 
     }
