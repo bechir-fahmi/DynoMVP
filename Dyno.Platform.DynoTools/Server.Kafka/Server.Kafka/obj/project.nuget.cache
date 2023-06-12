@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tKcV7ikHWvRQW/CBPDp65pc6u0UyrmDIFOEHZeRNVAp3V8NLPF9uoyEokfC0w3MmY/ZVDcUH8GcwZs8QIndiVw==",
+  "dgSpecHash": "zccVmJa+6p+bfOsmfxi05mbuzxz7ZHKqEkPEXg3pEUCnc5xm3swUHabPJsUkAbofUShYqT4waNcDisEV6YrEQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj",
+  "projectFilePath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\21692\\.nuget\\packages\\confluent.kafka\\1.9.3\\confluent.kafka.1.9.3.nupkg.sha512",
     "C:\\Users\\21692\\.nuget\\packages\\librdkafka.redist\\1.9.2\\librdkafka.redist.1.9.2.nupkg.sha512",

@@ -1,4 +1,5 @@
 ﻿
+using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using NHibernate.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
     public class User:IdentityUser
 
     {
+        //public ICollection<IdentityUserClaim> Claims { get; set; }
         [NotMapped]
         public override DateTimeOffset? LockoutEnd { get; set; }
 

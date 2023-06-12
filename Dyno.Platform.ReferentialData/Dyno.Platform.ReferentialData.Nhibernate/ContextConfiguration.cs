@@ -1,6 +1,6 @@
 ﻿using Dyno.Platform.ReferentialData.Nhibernate.RoleData;
 using Dyno.Platform.ReferentialData.Nhibernate.TicketData;
-using Dyno.Platform.ReferentialData.Nhibernate.UserClaim;
+using Dyno.Platform.ReferentialData.Nhibernate.UserClaimData;
 using Dyno.Platform.ReferentialData.Nhibernate.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using FluentNHibernate.Cfg;
@@ -30,7 +30,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             
 
            var configuration = new Configuration();
-
+            
             var mapper = new ModelMapper();
             mapper.AddMapping<UserMap>();
             mapper.AddMapping<RoleMap>();
@@ -51,6 +51,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
 
 
 
+            
             configuration.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
 
            
@@ -72,8 +73,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
                 
             });
 
-           
 
+            //configuration.AddIdentityMappings();
 
 
             var export = new SchemaUpdate(configuration);

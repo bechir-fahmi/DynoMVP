@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyno.Platform.ReferentialData.DTO.UserClaim
+namespace Dyno.Platform.ReferentialData.BusinessModel.UserClaimData
 {
-    internal class UserLoginDTO:IdentityUserLogin
+    public class UserRole : IdentityUserRole
     {
     }
 }

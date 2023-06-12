@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.BusinessModel.UserRole
 {
-    internal class RoleClaim : IdentityRoleClaim
+    public class RoleClaim : IdentityRoleClaim
     {
     }
 }

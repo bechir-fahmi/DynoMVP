@@ -7,37 +7,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dyno.Platform.ReferntialData.DataModel.UserData;
+using NHibernate.AspNetCore.Identity;
+using NHibernate.Mapping;
 
-namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaim
+namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaimData
 {
-    public class UserClaimMap:ClassMapping<UserClaimEntity>
+    public class UserClaimMap : ClassMapping<IdentityUserClaim>
     {
 
-    public UserClaimMap()
+        public UserClaimMap()
         {
             Schema("public");
             Table("user_claim");
-            Id(e => e.Id, id => {
+            Id(e => e.Id, id =>
+            {
                 id.Column("id");
-                id.Type(NHibernateUtil.String);
-                id.Length(32);
-               
+                id.Type(NHibernateUtil.Int32);
+                
+
             });
-            Property(e => e.UserId, prop => {
+           
+
+            Property(e => e.UserId, prop =>
+            {
                 prop.Column("user_id");
                 prop.Type(NHibernateUtil.String);
-                prop.Length(32);
                 prop.NotNullable(true);
-                
+
             });
-            Property(e => e.ClaimType, prop => {
+
+
+            Property(e => e.ClaimType, prop =>
+            {
                 prop.Column("claim_type");
                 prop.Type(NHibernateUtil.String);
                 prop.Length(256);
                 prop.NotNullable(true);
 
             });
-            Property(e => e.ClaimValue, prop => {
+            Property(e => e.ClaimValue, prop =>
+            {
                 prop.Column("claim_value");
                 prop.Type(NHibernateUtil.String);
                 prop.Length(256);

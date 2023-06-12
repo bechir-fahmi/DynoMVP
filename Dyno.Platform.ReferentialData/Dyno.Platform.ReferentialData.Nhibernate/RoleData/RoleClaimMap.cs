@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NHibernate.AspNetCore.Identity;
 
 namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
 {
-    public class RoleClaimMap:ClassMapping<RoleClaimEntity>
+    public class RoleClaimMap:ClassMapping<IdentityRoleClaim>
     {
         public RoleClaimMap()
         {
@@ -18,8 +19,9 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
             Table("role_claim");
             Id(e => e.Id, id => {
                 id.Column("id");
-                id.Type(NHibernateUtil.String);
-                id.Length(32);
+                id.Type(NHibernateUtil.Int32);
+                id.Generator(Generators.Identity);
+               
                 
             });
             Property(e => e.RoleId, prop => {
@@ -27,7 +29,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
                 prop.Type(NHibernateUtil.String);
                 prop.Length(32);
                 prop.NotNullable(true);
-                prop.Unique(true);
+                
             });
             Property(e => e.ClaimType, prop => {
                 prop.Column("claim_type");

@@ -14,6 +14,8 @@ using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferentialData.Business.Services.UserDataService;
 using Dyno.Platform.ReferentialData.Business.IServices.IRoleDataService;
 using Dyno.Platform.ReferentialData.Business.Services.RoleDataService;
+using Dyno.Platform.ReferentialData.Business.IServices.IUserClaimService;
+using Dyno.Platform.ReferentialData.Business.Services.ClaimService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,7 @@ builder.Services.AddNHibernate(configdata.Pgsqlconnection);
 builder.Services.AddDefaultIdentity<UserEntity>()
     .AddRoles<RoleEntity>()
     .AddHibernateStores();
+    
  
 
 
@@ -63,6 +66,8 @@ builder.Services.AddScoped<ICasierService, CasierService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<ISuperUserService,SuperUserService>();
 builder.Services.AddScoped<IRoleService,RoleService>();
+builder.Services.AddScoped<IUserClaimService, UserClaimService>();
+builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
 
 
 #endregion

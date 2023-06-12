@@ -30,11 +30,11 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
         [HttpPost]
         [Route("AddEmployer")]
-        public  IActionResult Add([FromBody] EmployerDTO employerDTO)
+        public  async Task Add([FromBody] EmployerDTO employerDTO)
         {
              _employerService.Create(employerDTO);
 
-            return Ok(employerDTO);
+            
 
         }
 

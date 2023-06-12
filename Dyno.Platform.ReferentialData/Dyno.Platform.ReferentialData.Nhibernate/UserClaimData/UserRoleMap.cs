@@ -1,4 +1,5 @@
-﻿using Dyno.Platform.ReferentialData.BusinessModel.UserClaim;
+﻿
+using Dyno.Platform.ReferntialData.DataModel.UserClaim;
 using NHibernate;
 using NHibernate.Mapping.ByCode.Conformist;
 using System;
@@ -7,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaim
+namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaimData
 {
-    public class UserRoleMap:ClassMapping<UserRole>
+    public class UserRoleMap : ClassMapping<UserRoleEntity>
     {
-        public UserRoleMap() {
+        public UserRoleMap()
+        {
             Schema("public");
             Table("user_role");
-            Property(e => e.UserId, prop => {
+            Property(e => e.UserId, prop =>
+            {
                 prop.Column("user_id");
                 prop.Type(NHibernateUtil.String);
                 prop.Length(32);
@@ -22,8 +25,9 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserClaim
                 prop.Unique(true);
             });
 
-            
-            Property(e => e.RoleId, prop => {
+
+            Property(e => e.RoleId, prop =>
+            {
                 prop.Column("role_id");
                 prop.Type(NHibernateUtil.String);
                 prop.Length(32);

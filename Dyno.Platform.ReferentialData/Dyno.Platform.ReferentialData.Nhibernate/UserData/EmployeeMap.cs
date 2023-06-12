@@ -51,6 +51,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 X.Table("Employement");
                 
                 X.Key(k => k.Column("employee_id"));
+                X.Lazy(CollectionLazy.Lazy);
                 X.Cascade(Cascade.All);
             }, r => r.ManyToMany(m => m.Column("Employer_id"))); 
     
