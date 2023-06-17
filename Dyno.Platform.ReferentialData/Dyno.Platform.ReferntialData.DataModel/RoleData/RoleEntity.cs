@@ -1,4 +1,5 @@
-﻿using NHibernate.AspNetCore.Identity;
+﻿using Dyno.Platform.ReferntialData.DataModel.UserData;
+using NHibernate.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Dyno.Platform.ReferntialData.DataModel.UserRole
 {
     public class RoleEntity : IdentityRole
     {
+        public virtual IList<UserEntity> Users { get; set; }
     }
 }

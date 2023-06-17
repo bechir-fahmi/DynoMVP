@@ -108,7 +108,17 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.NotNullable(false);
             });
 
-           
+            Bag(user => user.Roles, X =>
+            {
+
+                X.Table("user_role");
+
+                X.Key(k => k.Column("user_id"));
+                X.Cascade(Cascade.None);
+                X.Lazy(CollectionLazy.Lazy);
+                
+            }, r => r.ManyToMany(m => m.Column("role_id")));
+
 
         }
 

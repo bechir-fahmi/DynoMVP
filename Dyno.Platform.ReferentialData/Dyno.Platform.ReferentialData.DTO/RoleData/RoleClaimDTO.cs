@@ -1,4 +1,5 @@
-﻿using NHibernate.AspNetCore.Identity;
+﻿using Dyno.Platform.ReferentialData.DTO.UserData;
+using NHibernate.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Dyno.Platform.ReferentialData.DTO.RoleData
 {
     public class RoleClaimDTO:IdentityRoleClaim
     {
+       
     }
 }

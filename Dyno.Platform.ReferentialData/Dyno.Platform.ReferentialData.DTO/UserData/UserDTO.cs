@@ -1,4 +1,5 @@
 ﻿
+using Dyno.Platform.ReferentialData.DTO.RoleData;
 using Dyno.Platform.ReferentialData.DTO.UserClaimData;
 using NHibernate.AspNetCore.Identity;
 using System;
@@ -16,5 +17,7 @@ namespace Dyno.Platform.ReferentialData.DTO.UserData
         //public ICollection<IdentityUserClaim> Claims { get; set; }
         [NotMapped]
         public override DateTimeOffset? LockoutEnd { get; set; }
+
+        public IList<RoleDTO> roles { get; set; }
     }
 }

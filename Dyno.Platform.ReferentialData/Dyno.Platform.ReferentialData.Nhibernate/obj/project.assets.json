@@ -7926,11 +7926,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj",
+      "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj",
       "projectName": "Dyno.Platform.ReferentialData.Nhibernate",
-      "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj",
+      "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj",
       "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\obj\\",
+      "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7947,11 +7947,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj"
             },
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj"
             }
           }
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.DTO.UserClaimData
 {
-    internal class UserLoginDTO : IdentityUserLogin
+    public class UserLoginDTO : IdentityUserLogin
     {
     }
 }

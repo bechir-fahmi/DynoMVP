@@ -68,6 +68,7 @@ builder.Services.AddScoped<ISuperUserService,SuperUserService>();
 builder.Services.AddScoped<IRoleService,RoleService>();
 builder.Services.AddScoped<IUserClaimService, UserClaimService>();
 builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
+builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
 
 
 #endregion

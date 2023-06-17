@@ -6052,11 +6052,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj",
+      "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj",
       "projectName": "Dyno.Platform.ReferentialData.DTO",
-      "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj",
+      "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj",
       "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\obj\\",
+      "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6073,8 +6073,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj"
             }
           }
         }

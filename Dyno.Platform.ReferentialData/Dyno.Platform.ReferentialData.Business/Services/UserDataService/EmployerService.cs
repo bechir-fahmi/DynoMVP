@@ -69,10 +69,10 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
             var query = _session.QueryOver<EmployerEntity>();
 
             IList<EmployerEntity> employerEntities = query.List<EmployerEntity>();
-            foreach (var entity in employerEntities)
-            {
-                foreach (var employee in entity.Employees) { employee.Employers = null; }
-            }
+            //foreach (var entity in employerEntities)
+            //{
+            //    foreach (var employee in entity.Employees) { employee.Employers = null; }
+            //}
 
             IList<Employer> employers = _mapper.Map<IList<Employer>>(employerEntities);
             IList<EmployerDTO> employerDTOs = _mapper.Map<IList<EmployerDTO>>(employers);
@@ -86,7 +86,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
                 .Where(e => e.User.Email == email);
             EmployerEntity employerEntity = query.Single();
 
-            foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
+            //foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
 
             Employer employer = _mapper.Map<Employer>(employerEntity);
             EmployerDTO employerDTO = _mapper.Map<EmployerDTO>(employer);
@@ -102,7 +102,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
                .Where(e => e.Id == id);
             EmployerEntity employerEntity = query.Single();
 
-            foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
+            //foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
             Employer employer = _mapper.Map<Employer>(employerEntity);
             EmployerDTO employerDTO = _mapper.Map<EmployerDTO>(employer);
 
@@ -115,7 +115,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
                .Where(e => e.User.UserName == name);
             EmployerEntity employerEntity = query.Single();
 
-            foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
+            //foreach (var employee in employerEntity.Employees) { employee.Employers = null; }
             Employer employer = _mapper.Map<Employer>(employerEntity);
             EmployerDTO employerDTO = _mapper.Map<EmployerDTO>(employer);
 

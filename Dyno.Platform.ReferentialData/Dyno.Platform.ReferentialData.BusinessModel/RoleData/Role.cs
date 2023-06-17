@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Dyno.Platform.ReferentialData.BusinessModel.UserData;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserRole
 {
     public class Role :IdentityRole
     {
+        public IList<User> users { get; set; }
     }
 }
