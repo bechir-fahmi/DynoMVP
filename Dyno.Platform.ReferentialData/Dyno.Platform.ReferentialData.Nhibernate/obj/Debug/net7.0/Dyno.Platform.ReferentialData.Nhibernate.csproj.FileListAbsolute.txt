@@ -17,3 +17,5 @@ C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialD
 C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.Nhibernate\obj\Debug\net7.0\refint\Dyno.Platform.ReferentialData.Nhibernate.dll
 C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.Nhibernate\obj\Debug\net7.0\Dyno.Platform.ReferentialData.Nhibernate.pdb
 C:\Users\21692\source\repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.Nhibernate\obj\Debug\net7.0\ref\Dyno.Platform.ReferentialData.Nhibernate.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.Nhibernate\bin\Debug\net7.0\Platform.Shared.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.Nhibernate\bin\Debug\net7.0\Platform.Shared.pdb

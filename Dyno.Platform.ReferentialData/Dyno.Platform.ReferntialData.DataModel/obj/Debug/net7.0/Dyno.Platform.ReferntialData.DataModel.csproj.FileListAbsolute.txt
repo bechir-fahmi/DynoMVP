@@ -22,3 +22,6 @@ C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialD
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\obj\Debug\net7.0\refint\Dyno.Platform.ReferntialData.DataModel.dll
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\obj\Debug\net7.0\Dyno.Platform.ReferntialData.DataModel.pdb
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\obj\Debug\net7.0\ref\Dyno.Platform.ReferntialData.DataModel.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\bin\Debug\net7.0\Platform.Shared.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\bin\Debug\net7.0\Platform.Shared.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferntialData.DataModel\obj\Debug\net7.0\Dyno.Platform.ReferntialData.DataModel.csproj.CopyComplete

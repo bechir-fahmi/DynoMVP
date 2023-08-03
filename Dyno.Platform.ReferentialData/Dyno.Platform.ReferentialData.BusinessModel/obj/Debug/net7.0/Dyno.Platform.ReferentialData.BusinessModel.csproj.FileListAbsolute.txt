@@ -25,3 +25,5 @@ C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialD
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.BusinessModel\bin\Debug\net7.0\Dyno.Platform.ReferntialData.DataModel.dll
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.BusinessModel\bin\Debug\net7.0\Dyno.Platform.ReferntialData.DataModel.pdb
 C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.BusinessModel\obj\Debug\net7.0\Dyno.Platform.ReferentialData.BusinessModel.csproj.CopyComplete
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.BusinessModel\bin\Debug\net7.0\Platform.Shared.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.ReferentialData\Dyno.Platform.ReferentialData.BusinessModel\bin\Debug\net7.0\Platform.Shared.pdb

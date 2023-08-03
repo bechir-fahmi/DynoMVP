@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Dyno.Platform.ReferentialData.DTO",
+    "\\Dyno.Platform.ReferentialData.DTO\\Mapping"
   ],
+  "SelectedNode": "\\Dyno.Platform.ReferentialData.DTO\\Mapping\\MappingDTOtoBM.cs",
   "PreviewInSolutionExplorer": false
 }

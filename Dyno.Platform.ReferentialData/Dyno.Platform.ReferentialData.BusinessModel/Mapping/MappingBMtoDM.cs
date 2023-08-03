@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Dyno.Platform.ReferentialData.BusinessModel.TicketData;
+using Dyno.Platform.ReferentialData.BusinessModel.AddressData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
-using Dyno.Platform.ReferntialData.DataModel.PayementData;
+using Dyno.Platform.ReferntialData.DataModel.AddressData;
 using Dyno.Platform.ReferntialData.DataModel.UserClaim;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
@@ -19,17 +19,11 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.Mapping
     {
         public MappingBMtoDM() {
             CreateMap<User, UserEntity>().ReverseMap();
-            CreateMap<Employer, EmployerEntity>().ReverseMap();
-            CreateMap<Employee, EmployeeEntity>().ReverseMap();
-            CreateMap<ShopOwner, ShopOwnerEntity>().ReverseMap();   
-            CreateMap<Casier, CasierEntity>().ReverseMap();
-            CreateMap<SuperUser, SuperUserEntity>().ReverseMap();
-            CreateMap<Category, CategoryEntity>().ReverseMap();
-            CreateMap<Ticket, TicketEntity>().ReverseMap();
-            CreateMap<Payement, PayementEntity>().ReverseMap();
+            CreateMap<Address, AddressEntity>().ReverseMap();
+           
             CreateMap<Role,RoleEntity>().ReverseMap();
-            CreateMap<UserClaim, UserClaimEntity>().ReverseMap();   
-            CreateMap<RoleClaim,  RoleClaimEntity>().ReverseMap();
+            CreateMap<UserClaim, UserClaimEntity>().ReverseMap();
+            CreateMap<RoleClaim, RoleClaimEntity>().ReverseMap();
         }
     }
 }

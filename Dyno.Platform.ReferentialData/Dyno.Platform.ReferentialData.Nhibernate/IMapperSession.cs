@@ -19,8 +19,10 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
         void  Add(T entity);
         void Delete(T entity);
         void Update(T entity);
-        T GetById(Guid id);
+        T GetById(int id);
        IList<T> GetAll();
-        IQueryable<T> Entity { get; }
+       IQueryable<T> Entity { get; }
+       T GetByExpression(Expression<Func<T, bool>> expression);
+       List<T> GetAllByExpression(Expression<Func<T, bool>> expression);
     }
 }

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Platform.Shared\Platform.Shared.csproj" />
     <ProjectReference Include="..\Dyno.Platform.ReferentialData.BusinessModel\Dyno.Platform.ReferentialData.BusinessModel.csproj" />
   </ItemGroup>
 

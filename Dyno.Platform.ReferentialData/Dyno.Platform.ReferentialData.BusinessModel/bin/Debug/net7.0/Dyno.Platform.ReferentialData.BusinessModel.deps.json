@@ -1029,10 +1029,16 @@
       },
       "Dyno.Platform.ReferntialData.DataModel/1.0.0": {
         "dependencies": {
-          "NHibernate.AspNetCore.Identity": "7.0.1"
+          "NHibernate.AspNetCore.Identity": "7.0.1",
+          "Platform.Shared": "1.0.0"
         },
         "runtime": {
           "Dyno.Platform.ReferntialData.DataModel.dll": {}
+        }
+      },
+      "Platform.Shared/1.0.0": {
+        "runtime": {
+          "Platform.Shared.dll": {}
         }
       }
     }
@@ -1758,6 +1764,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "Dyno.Platform.ReferntialData.DataModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Platform.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

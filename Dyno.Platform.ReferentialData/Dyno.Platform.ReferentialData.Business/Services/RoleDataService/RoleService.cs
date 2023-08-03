@@ -3,6 +3,7 @@ using Dyno.Platform.ReferentialData.Business.IServices.IRoleDataService;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
 using Dyno.Platform.ReferentialData.DTO.RoleData;
 using Dyno.Platform.ReferentialData.Nhibernate;
+using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -17,11 +18,13 @@ namespace Dyno.Platform.ReferentialData.Business.Services.RoleDataService
     {
         public readonly IMapper? _mapper;
         public readonly RoleManager<RoleEntity> _roleManager;
+        public readonly UserManager<UserEntity> _userManager;
 
-        public RoleService(IMapper? mapper, RoleManager<RoleEntity> roleManager)
+        public RoleService(IMapper? mapper, RoleManager<RoleEntity> roleManager, UserManager<UserEntity> userManager)
         {
             _mapper = mapper;
             _roleManager = roleManager;
+            _userManager = userManager;
         }
 
         public async Task Create(RoleDTO entity)

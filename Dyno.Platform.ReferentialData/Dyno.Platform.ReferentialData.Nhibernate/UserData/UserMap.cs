@@ -27,7 +27,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
             Id(e => e.Id, id => {
                 id.Column("id");
                 id.Type(NHibernateUtil.StringClob);
-                id.Length(32);
+                id.Length(36);
                 
             });
             Property(e => e.UserName, prop => {
@@ -114,12 +114,17 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 X.Table("user_role");
 
                 X.Key(k => k.Column("user_id"));
-                X.Cascade(Cascade.None);
+
                 X.Lazy(CollectionLazy.Lazy);
-                
+                X.Cascade(Cascade.All);
             }, r => r.ManyToMany(m => m.Column("role_id")));
 
-
+            Bag(x => x.Address, m =>
+            {
+                m.Key(k => k.Column("user_id"));
+                m.Cascade(Cascade.All | Cascade.DeleteOrphans);
+                m.Inverse(true);
+            }, map => map.OneToMany());
         }
 
     }

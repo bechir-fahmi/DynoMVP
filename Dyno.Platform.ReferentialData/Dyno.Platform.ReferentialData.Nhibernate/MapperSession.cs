@@ -62,10 +62,22 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             _session.Flush();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             T entity=_session.Load<T>(id);
             return entity;
+        }
+
+        public T GetByExpression(Expression<Func<T, bool>> expression)
+        {
+            T entity = _session.Query<T>().FirstOrDefault<T>();
+            return entity;
+        }
+
+        public List<T> GetAllByExpression(Expression<Func<T, bool>> expression)
+        {
+            List<T> entities = _session.Query<T>().Where<T>(expression).ToList<T>();
+            return entities;
         }
 
         public void Update(T entity)

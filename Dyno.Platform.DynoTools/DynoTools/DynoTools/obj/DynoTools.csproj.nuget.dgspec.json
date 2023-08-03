@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj": {}
+    "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj": {}
   },
   "projects": {
-    "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj": {
+    "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj",
+        "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj",
         "projectName": "DynoTools",
-        "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj",
+        "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\DynoTools.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\obj\\",
+        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\DynoTools\\DynoTools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,5 +1,3 @@
-using Dyno.Platform.ReferentialData.Business.IServices;
-using Dyno.Platform.ReferentialData.Business.Services;
 using Dyno.Platform.ReferentialData.BusinessModel.Mapping;
 using Dyno.Platform.ReferentialData.Nhibernate;
 using Dyno.Platform.ReferentialData.WebApi;
@@ -16,6 +14,16 @@ using Dyno.Platform.ReferentialData.Business.IServices.IRoleDataService;
 using Dyno.Platform.ReferentialData.Business.Services.RoleDataService;
 using Dyno.Platform.ReferentialData.Business.IServices.IUserClaimService;
 using Dyno.Platform.ReferentialData.Business.Services.ClaimService;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Platform.Shared.EnvironmentVariable;
+using Dyno.Platform.ReferentialData.Business.Services.Authentification;
+using Dyno.Platform.ReferentialData.Business.IServices.IAuthentification;
+using Dyno.Platform.ReferentialData.Business.IServices.IAddressDataService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,17 +67,20 @@ builder.Services.AddAutoMapper(typeof(MappingDTOtoBM));
 
 #region Business Service
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddScoped<IEmployerService, EmployerService>();
-builder.Services.AddScoped<IShopOwnerService, ShopOwnerService>();
-builder.Services.AddScoped<ICasierService, CasierService>();
-builder.Services.AddScoped<ITicketService, TicketService>();
-builder.Services.AddScoped<ISuperUserService,SuperUserService>();
 builder.Services.AddScoped<IRoleService,RoleService>();
 builder.Services.AddScoped<IUserClaimService, UserClaimService>();
 builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
+builder.Services.AddScoped<IAddressService, IAddressService>();
 
+
+builder.Services.AddScoped<IUrlHelper>(x =>
+{
+    var actionContext = x.GetRequiredService<IActionContextAccessor>().ActionContext;
+    var factory = x.GetRequiredService<IUrlHelperFactory>();
+    return factory.GetUrlHelper(actionContext);
+
+});
 
 #endregion
 
@@ -82,7 +93,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-   
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = JWTVariable.Issuer,
+        ValidAudience = JWTVariable.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JWTVariable.key))
+    };
+});
+
 var app = builder.Build();
 
 

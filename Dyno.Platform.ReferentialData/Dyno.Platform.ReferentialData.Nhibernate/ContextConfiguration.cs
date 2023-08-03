@@ -1,5 +1,6 @@
-﻿using Dyno.Platform.ReferentialData.Nhibernate.RoleData;
-using Dyno.Platform.ReferentialData.Nhibernate.TicketData;
+﻿using Dyno.Platform.ReferentialData.Nhibernate.AddressData;
+using Dyno.Platform.ReferentialData.Nhibernate.RoleData;
+
 using Dyno.Platform.ReferentialData.Nhibernate.UserClaimData;
 using Dyno.Platform.ReferentialData.Nhibernate.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
@@ -34,19 +35,14 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             var mapper = new ModelMapper();
             mapper.AddMapping<UserMap>();
             mapper.AddMapping<RoleMap>();
+            mapper.AddMapping<UserRoleMap>();
             mapper.AddMapping<RoleClaimMap>();
             mapper.AddMapping<UserTokenMap>();
             mapper.AddMapping<UserLoginMap>();
-            mapper.AddMapping<UserRoleMap>();
             mapper.AddMapping<UserClaimMap>();
-            mapper.AddMapping<ShopOwnerMap>();
-            mapper.AddMapping<SuperUserMap>();
-            mapper.AddMapping<EmployeeMap>();
-            mapper.AddMapping<EmployerMap>();
-            mapper.AddMapping<CasierMap>();
-            mapper.AddMapping<TicketMap>();
-            mapper.AddMapping<PayementMap>();
-            mapper.AddMapping<CategoryMap>();
+            mapper.AddMapping<AddressMap>();
+           
+           
 
 
 

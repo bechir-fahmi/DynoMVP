@@ -73,7 +73,6 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
 
         [HttpPut]
         [Route("UpdateUser")]
-
         public async Task Update([FromBody] UserDTO userDTO)
         {
 
@@ -87,6 +86,20 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.UserData
             //{
             //    return BadRequest("Update failed");
             //}
+        }
+        [HttpPut]
+        [Route("UpdateUserInfo")]
+        public async Task<IActionResult> Update([FromBody] UpdateUserDTO userDTO)
+        {
+            var result = await _userService.UpdateUserInfo(userDTO);
+            return Ok(result);
+        }
+        [HttpPut]
+        [Route("UpdatePassword")]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordDTO updatePassword) 
+        {
+            var result = await _userService.UpdateUserPassword(updatePassword);
+            return Ok(result);
         }
 
 

@@ -10,4 +10,8 @@
     <PackageReference Include="NHibernate.AspNetCore.Identity" Version="7.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Platform.Shared\Platform.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

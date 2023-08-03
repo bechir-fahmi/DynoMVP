@@ -57,6 +57,9 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
                 X.Key(k => k.Column("role_id"));
                 X.Lazy(CollectionLazy.Lazy);
                 X.Cascade(Cascade.All);
+
+
+
             }, r => r.ManyToMany(m => m.Column("user_id")));
 
         }

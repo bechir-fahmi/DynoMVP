@@ -1830,13 +1830,24 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "NHibernate.AspNetCore.Identity": "7.0.1"
+          "NHibernate.AspNetCore.Identity": "7.0.1",
+          "Platform.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Dyno.Platform.ReferntialData.DataModel.dll": {}
         },
         "runtime": {
           "bin/placeholder/Dyno.Platform.ReferntialData.DataModel.dll": {}
+        }
+      },
+      "Platform.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Platform.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Platform.Shared.dll": {}
         }
       }
     }
@@ -6018,6 +6029,11 @@
       "type": "project",
       "path": "../Dyno.Platform.ReferntialData.DataModel/Dyno.Platform.ReferntialData.DataModel.csproj",
       "msbuildProject": "../Dyno.Platform.ReferntialData.DataModel/Dyno.Platform.ReferntialData.DataModel.csproj"
+    },
+    "Platform.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Platform.Shared/Platform.Shared.csproj",
+      "msbuildProject": "../../Platform.Shared/Platform.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6032,9 +6048,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj",
+      "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj",
       "projectName": "Dyno.Platform.ReferentialData.BusinessModel",
-      "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj",
+      "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj",
       "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\obj\\",
       "projectStyle": "PackageReference",
@@ -6053,8 +6069,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj": {
-              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj"
+            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj": {
+              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj"
             }
           }
         }
