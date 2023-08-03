@@ -24,6 +24,9 @@ using Platform.Shared.EnvironmentVariable;
 using Dyno.Platform.ReferentialData.Business.Services.Authentification;
 using Dyno.Platform.ReferentialData.Business.IServices.IAuthentification;
 using Dyno.Platform.ReferentialData.Business.IServices.IAddressDataService;
+using Dyno.Platform.ReferentialData.Business.Services.AddressDataService;
+using Dyno.Platform.ReferentialData.Business.IServices.IBalanceDataService;
+using Dyno.Platform.ReferentialData.Business.Services.BalanceDataService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,7 +74,8 @@ builder.Services.AddScoped<IRoleService,RoleService>();
 builder.Services.AddScoped<IUserClaimService, UserClaimService>();
 builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
-builder.Services.AddScoped<IAddressService, IAddressService>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IBalanceService, BalanceService>();
 
 
 builder.Services.AddScoped<IUrlHelper>(x =>

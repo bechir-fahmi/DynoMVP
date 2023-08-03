@@ -125,11 +125,14 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
         }
 
         public async Task<OperationResult> UpdateUserPassword(UpdatePasswordDTO updatePassword)
+
         {
             UserEntity userEntity = await _userManager.FindByIdAsync(updatePassword.Id);
-            if(userEntity.PasswordHash== updatePassword.CurrentPassword) 
+            IdentityResult result =await  _userManager.ChangePasswordAsync(userEntity, updatePassword.CurrentPassword, updatePassword.NewPassword);
+            
+            if(result.Succeeded) 
             {
-                userEntity.PasswordHash = updatePassword.NewPassword;
+                
                 return new OperationResult
                 {
                     Result = QueryResult.IsSucceded,

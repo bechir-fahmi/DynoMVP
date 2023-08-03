@@ -45,9 +45,12 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
             {
                 prop.Column("concurrency_stamp");
                 prop.Type(NHibernateUtil.String);
-                prop.Length(36);
+                prop.Length(36);                                             
                 prop.NotNullable(false);
             });
+             
+
+
 
             Bag(role => role.Users, X =>
             {

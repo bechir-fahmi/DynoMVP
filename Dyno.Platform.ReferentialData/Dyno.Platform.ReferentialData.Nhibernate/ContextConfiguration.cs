@@ -1,4 +1,5 @@
 ﻿using Dyno.Platform.ReferentialData.Nhibernate.AddressData;
+using Dyno.Platform.ReferentialData.Nhibernate.BalanceData;
 using Dyno.Platform.ReferentialData.Nhibernate.RoleData;
 
 using Dyno.Platform.ReferentialData.Nhibernate.UserClaimData;
@@ -35,12 +36,13 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             var mapper = new ModelMapper();
             mapper.AddMapping<UserMap>();
             mapper.AddMapping<RoleMap>();
-            mapper.AddMapping<UserRoleMap>();
+            //mapper.AddMapping<UserRoleMap>();
             mapper.AddMapping<RoleClaimMap>();
             mapper.AddMapping<UserTokenMap>();
             mapper.AddMapping<UserLoginMap>();
             mapper.AddMapping<UserClaimMap>();
             mapper.AddMapping<AddressMap>();
+            mapper.AddMapping<BalanceMap>();
            
            
 

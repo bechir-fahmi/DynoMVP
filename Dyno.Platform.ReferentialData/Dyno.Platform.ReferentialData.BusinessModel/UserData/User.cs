@@ -1,5 +1,6 @@
 ﻿
 using Dyno.Platform.ReferentialData.BusinessModel.AddressData;
+using Dyno.Platform.ReferentialData.BusinessModel.BalanceData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
 using NHibernate.AspNetCore.Identity;
@@ -22,7 +23,8 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
         public override DateTimeOffset? LockoutEnd { get; set; }
 
         public IList<Role> Roles { get; set; }
-        public IList<Address> Address { get; set; }
+        public IList<Address> Addresses { get; set; }
+        public IList<Balance> Balances { get; set; }
         
     }
 }

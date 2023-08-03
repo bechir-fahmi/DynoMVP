@@ -119,7 +119,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 X.Cascade(Cascade.All);
             }, r => r.ManyToMany(m => m.Column("role_id")));
 
-            Bag(x => x.Address, m =>
+            Bag(x => x.Addresses, m =>
             {
                 m.Key(k => k.Column("user_id"));
                 m.Cascade(Cascade.All | Cascade.DeleteOrphans);

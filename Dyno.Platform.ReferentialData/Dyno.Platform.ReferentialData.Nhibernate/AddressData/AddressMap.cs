@@ -85,6 +85,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.AddressData
                 x.Column("user_id");
                 x.Cascade(Cascade.Persist);
             });
+            Table("address");
 
         }
     }
