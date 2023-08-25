@@ -10,6 +10,7 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserRole
 {
     public class Role :IdentityRole
     {
+        
         public IList<User> users { get; set; }
     }
 }

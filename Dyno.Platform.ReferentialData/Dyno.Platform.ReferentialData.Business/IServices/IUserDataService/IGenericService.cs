@@ -1,4 +1,6 @@
-﻿using Dyno.Platform.ReferntialData.DataModel.UserData;
+﻿using Dyno.Platform.ReferentialData.DTO.RoleData;
+using Dyno.Platform.ReferntialData.DataModel.UserData;
+using Platform.Shared.Result;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +13,7 @@ namespace Dyno.Platform.ReferentialData.Business.IServices.IUserDataService
     public interface IGenericService<T>
     {
         IList<T> GetAll();
-        Task Create(T entity);
+        Task<OperationResult> Create(T entity);
         Task Update(T entity);
         
 

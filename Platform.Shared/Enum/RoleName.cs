@@ -8,7 +8,7 @@ namespace Platform.Shared.Enum
 {
     public enum RoleName
     {
-        Client,
-        Admin,
+        Client = 0,
+        Admin = 1,
     }
 }

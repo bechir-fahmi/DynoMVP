@@ -22,8 +22,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
             {
                 id.Column("id");
                 id.Type(NHibernateUtil.String);
-                id.Length(32);
-                
+                id.Length(64);
+
             });
             Property(e => e.Name, prop =>
             {
@@ -48,7 +48,7 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
                 prop.Length(36);                                             
                 prop.NotNullable(false);
             });
-             
+
 
 
 
@@ -58,12 +58,11 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.RoleData
                 X.Table("user_role");
 
                 X.Key(k => k.Column("role_id"));
+
                 X.Lazy(CollectionLazy.Lazy);
                 X.Cascade(Cascade.All);
-
-
-
             }, r => r.ManyToMany(m => m.Column("user_id")));
+
 
         }
     }

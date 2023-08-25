@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dyno.Platform.ReferentialData.BusinessModel;
 using Dyno.Platform.ReferentialData.BusinessModel.AddressData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
@@ -28,6 +29,8 @@ namespace Dyno.Platform.ReferentialData.DTO.Mapping
             CreateMap<RoleClaimDTO, RoleClaim>().ReverseMap();
             CreateMap<RegisterModelDTO, User>().ReverseMap();
             CreateMap<UpdateUserDTO, User>().ReverseMap();
+            CreateMap<UserOtpDTO, UserOtp>().ReverseMap();
+            CreateMap<TestDTO,Test>().ReverseMap(); 
         }
     }
 }

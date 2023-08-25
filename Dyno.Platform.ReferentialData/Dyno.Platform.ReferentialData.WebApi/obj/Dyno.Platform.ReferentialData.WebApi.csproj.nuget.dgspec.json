@@ -108,7 +108,7 @@
         "projectName": "Platform.MicroserviceBase",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -180,7 +180,7 @@
         "projectName": "Server.Kafka",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -261,7 +261,7 @@
         "projectName": "WatchDog",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -369,7 +369,7 @@
         "projectName": "Dyno.Platform.ReferentialData.BusinessModel",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\Dyno.Platform.ReferentialData.BusinessModel.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.BusinessModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -546,7 +546,7 @@
         "projectName": "Dyno.Platform.ReferentialData.DTO",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\Dyno.Platform.ReferentialData.DTO.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -618,7 +618,7 @@
         "projectName": "Dyno.Platform.ReferentialData.Nhibernate",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -834,7 +834,7 @@
         "projectName": "Dyno.Platform.ReferntialData.DataModel",
         "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\Dyno.Platform.ReferntialData.DataModel.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferntialData.DataModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",

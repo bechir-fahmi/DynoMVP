@@ -17,6 +17,6 @@ namespace Dyno.Platform.ReferentialData.DTO.AddressData
         public string? City { get; set; }
         public int PostalCode { get; set; }
         public string? Country { get; set; }
-        public UserDTO User { get; set; }
+        public UserDTO? User { get; set; }
     }
 }

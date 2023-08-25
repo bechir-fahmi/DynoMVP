@@ -8,7 +8,7 @@ namespace Platform.Shared.Enum
 {
     public enum QueryResult
     {
-        IsSucceded=0, 
+        IsSucced=0, 
         IsFailed=1
     }
 }

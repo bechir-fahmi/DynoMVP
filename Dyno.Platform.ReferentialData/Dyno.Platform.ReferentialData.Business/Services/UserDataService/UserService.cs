@@ -40,30 +40,25 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
             List<UserEntity> userEntities = _userManager.Users.ToList();
             foreach(var user in userEntities)
             {
-                user.Roles = null;
+                foreach(var role in user.Roles) { role.Users = null; }
+                foreach(var address in user.Addresses) { address.User = null; }
+                
+               
             }
             List<User> users = _mapper.Map<List<User>>(userEntities);
             List<UserDTO> userDTOs = _mapper.Map<List<UserDTO>>(users);
             return userDTOs;
         }
+
         public async Task<UserDTO> GetById(string id)
         {
             UserEntity userEntity = await _userManager.FindByIdAsync(id);
-
-
             User user = _mapper.Map<User>(userEntity);
             UserDTO userDTO = _mapper.Map<UserDTO>(user);
             return userDTO;
         }
-        public async Task Delete(string id)
-        {
-            var userEntity = await _userManager.FindByIdAsync(id);
-            if (userEntity != null)
-            {
-                _userManager.DeleteAsync(userEntity);
-            }
 
-        }
+        
         public async Task<UserDTO> GetByUserName(string name)
         {
 
@@ -145,6 +140,16 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
                 Result = QueryResult.IsFailed,
                 ExceptionMessage = "Current Password is wrong"
             };
+        }
+
+        public async Task Delete(string id)
+        {
+            var userEntity = await _userManager.FindByIdAsync(id);
+            if (userEntity != null)
+            {
+                _userManager.DeleteAsync(userEntity);
+            }
+
         }
     }
 }

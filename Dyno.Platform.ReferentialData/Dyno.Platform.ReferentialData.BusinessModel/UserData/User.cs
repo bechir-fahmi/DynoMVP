@@ -5,26 +5,34 @@ using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
 using NHibernate.AspNetCore.Identity;
 using NHibernate.Engine;
+using Platform.Shared.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
 {
-    public class User:IdentityUser
-
+    public class User : IdentityUser
     {
-        //public ICollection<IdentityUserClaim> Claims { get; set; }
-        [NotMapped]
-        public override DateTimeOffset? LockoutEnd { get; set; }
+        #region User Data
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public DateTime DateOfBirth { get; set; }
+        public Gender Gender { get; set; }
+        public string? Picture { get; set; }
+        #endregion
 
-        public IList<Role> Roles { get; set; }
-        public IList<Address> Addresses { get; set; }
-        public IList<Balance> Balances { get; set; }
-        
+        #region Structure
+        [JsonIgnore]
+        public IList<Role>? Roles { get; set; }
+        public IList<Address>? Addresses { get; set; }
+        public IList<Balance>? Balances { get; set; }
+        #endregion
+
     }
 }

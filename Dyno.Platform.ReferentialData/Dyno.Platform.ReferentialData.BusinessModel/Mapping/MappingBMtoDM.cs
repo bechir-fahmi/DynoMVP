@@ -3,6 +3,7 @@ using Dyno.Platform.ReferentialData.BusinessModel.AddressData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
+using Dyno.Platform.ReferntialData.DataModel;
 using Dyno.Platform.ReferntialData.DataModel.AddressData;
 using Dyno.Platform.ReferntialData.DataModel.UserClaim;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
@@ -20,10 +21,11 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.Mapping
         public MappingBMtoDM() {
             CreateMap<User, UserEntity>().ReverseMap();
             CreateMap<Address, AddressEntity>().ReverseMap();
-           
+            CreateMap<UserOtp, UserOtpEntity>().ReverseMap();
             CreateMap<Role,RoleEntity>().ReverseMap();
             CreateMap<UserClaim, UserClaimEntity>().ReverseMap();
             CreateMap<RoleClaim, RoleClaimEntity>().ReverseMap();
+            CreateMap<Test, TestData>().ReverseMap();
         }
     }
 }

@@ -27,18 +27,20 @@ using Dyno.Platform.ReferentialData.Business.IServices.IAddressDataService;
 using Dyno.Platform.ReferentialData.Business.Services.AddressDataService;
 using Dyno.Platform.ReferentialData.Business.IServices.IBalanceDataService;
 using Dyno.Platform.ReferentialData.Business.Services.BalanceDataService;
+using Dyno.Platform.ReferentialData.Business.IServices;
+using Dyno.Platform.ReferentialData.Business.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 #region Kafka Config
 KafkaConfig config = builder.Configuration.GetSection("Kafka_BootstrapServer").Get<KafkaConfig>();
 
-builder.Services.AddSingleton(config);
+/*builder.Services.AddSingleton(config);
 
 
 builder.Services.AddSingleton<IProducer<HeartBeatMessage>>(producer => new Producer<HeartBeatMessage>(Topic.TOPIC_WATCHDOG_SEND_MESSAGE, config));
 builder.Services.AddSingleton<IConsumer<HeartBeatMessage>>(consumer => new Consumer<HeartBeatMessage>(Topic.TOPIC_WATCHDOG_RECEIVE_MESSAGE, config));
-builder.Services.AddHostedService<MicroserviceBaseWorker>();
+builder.Services.AddHostedService<MicroserviceBaseWorker>();*/
 
 #endregion
 
@@ -76,6 +78,7 @@ builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IBalanceService, BalanceService>();
+builder.Services.AddScoped<ITestService, TestService>();
 
 
 builder.Services.AddScoped<IUrlHelper>(x =>

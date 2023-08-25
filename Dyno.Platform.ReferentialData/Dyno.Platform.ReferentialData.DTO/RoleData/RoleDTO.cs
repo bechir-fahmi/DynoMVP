@@ -10,6 +10,7 @@ namespace Dyno.Platform.ReferentialData.DTO.RoleData
 {
     public class RoleDTO :IdentityRole
     {
+        
         public IList<UserDTO> Users { get; set; }
     }
 }

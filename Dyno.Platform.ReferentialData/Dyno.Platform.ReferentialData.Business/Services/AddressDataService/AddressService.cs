@@ -45,6 +45,11 @@ namespace Dyno.Platform.ReferentialData.Business.Services.AddressDataService
         public IList<AddressDTO> GetAddressByUserId(string userId)
         {
             IList<AddressEntity> addressEntities = _mapperSession.GetAllByExpression(address => address.User.Id  == userId);
+            foreach (var address in addressEntities)
+            {
+                address.User = null;
+
+            }
             IList<Address> addresses = _mapper.Map<IList<Address>>(addressEntities);    
             IList<AddressDTO> addressDTOs = _mapper.Map<IList<AddressDTO>>(addresses);
             return addressDTOs;
@@ -53,6 +58,11 @@ namespace Dyno.Platform.ReferentialData.Business.Services.AddressDataService
         public IList<AddressDTO> GetAllAddresses()
         {
             IList<AddressEntity> addressEntities = _mapperSession.GetAll();
+            foreach (var address in addressEntities)
+            {
+                address.User = null;
+
+            }
             IList<Address> addresses = _mapper.Map<IList<Address>>(addressEntities);
             IList<AddressDTO> addressDTOs = _mapper.Map<IList<AddressDTO>>(addresses) ;
             return addressDTOs;

@@ -25,9 +25,9 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
 
         [HttpGet]
         [Route("GetAddressByUserId/{userId}")]
-        public IActionResult GetAdressByUserId(string id)
+        public IActionResult GetAdressByUserId(string userId)
         {
-            IList<AddressDTO> addressDTOs = _addressService.GetAddressByUserId(id);
+            IList<AddressDTO> addressDTOs = _addressService.GetAddressByUserId(userId);
             return Ok(addressDTOs);
         }
 
@@ -56,7 +56,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
         }
 
         [HttpDelete]
-        [Route("DeleteAddress/{adressId}")]
+        [Route("DeleteAddress/{addressId}")]
         public IActionResult DeleteAdress( int addressId)
         {
             _addressService.DeleteAddress(addressId);

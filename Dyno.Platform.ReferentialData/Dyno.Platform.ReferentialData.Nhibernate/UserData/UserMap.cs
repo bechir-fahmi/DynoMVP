@@ -44,6 +44,18 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.NotNullable(true);
                 prop.Unique(true);
             });
+            Property(e => e.FirstName, prop => {
+                prop.Column("first_name");
+                prop.Type(NHibernateUtil.String);
+                prop.Length(64);
+                prop.NotNullable(false);
+            });
+            Property(e => e.LastName, prop => {
+                prop.Column("last_name");
+                prop.Type(NHibernateUtil.String);
+                prop.Length(64);
+                prop.NotNullable(false);
+            });;
             Property(e => e.Email, prop => {
                 prop.Column("email");
                 prop.Type(NHibernateUtil.String);
@@ -72,18 +84,33 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.Type(NHibernateUtil.Boolean);
                 prop.NotNullable(true);
             });
+            Property(e => e.DateOfBirth, prop => {
+                prop.Column("date_of_birth");
+                prop.Type(NHibernateUtil.DateTime);
+                prop.NotNullable(false);
+            });
+            Property(e => e.Gender, prop => {
+                prop.Column("gender");
+                prop.Type(NHibernateUtil.Int32);
+                prop.NotNullable(false);
+            });
+            Property(e => e.Picture, prop => {
+                prop.Column("picture");
+                prop.Type(NHibernateUtil.String);
+                prop.NotNullable(false);
+            });
             Property(e => e.LockoutEnabled, prop => {
                 prop.Column("lockout_enabled");
                 prop.Type(NHibernateUtil.Boolean);
                 prop.NotNullable(true);
             });
-            //Property(e => e.LockoutEnd, prop =>
-            //{
-            //    prop.Column("lockout_end");
-            //    prop.Type(NHibernateUtil.DateTime);
-            //    prop.NotNullable(false);
+            /*Property(e => e.LockoutEnd, prop =>
+            {
+                prop.Column("lockout_end");
+                prop.Type(NHibernateUtil.DateTimeOffset);
+                prop.NotNullable(false);
 
-            //});
+            });*/
             Property(e => e.ConcurrencyStamp, prop => {
                 prop.Column("concurrency_stamp");
                 prop.Type(NHibernateUtil.String);

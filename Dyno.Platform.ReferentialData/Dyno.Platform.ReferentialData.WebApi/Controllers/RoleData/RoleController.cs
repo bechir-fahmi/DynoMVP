@@ -2,6 +2,7 @@
 using Dyno.Platform.ReferentialData.DTO.RoleData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Platform.Shared.Result;
 
 namespace Dyno.Platform.ReferentialData.WebApi.Controllers.RoleData
 {
@@ -33,21 +34,35 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.RoleData
             RoleDTO roleDTO = await _roleService.GetById(id);
             return Ok(roleDTO);
         }
-        [HttpPost]
-        [Route("CreateRole")]
-        public async Task create([FromBody] RoleDTO roleDTO) 
-        {
-           await _roleService.Create(roleDTO);
-        }
 
         [HttpGet]
         [Route("GetRoleByName/{name}")]
 
-        public async Task<IActionResult> GetByName(string name) 
+        public async Task<IActionResult> GetByName(string name)
         {
             RoleDTO roleDTO = await _roleService.GetByName(name);
             return Ok(roleDTO);
         }
+
+        [HttpPost]
+        [Route("CreateRole")]
+        [ProducesResponseType(typeof(OperationResult), 200)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> Create([FromBody] RoleDTO roleDTO) 
+        {
+            try
+            {
+                OperationResult result = await _roleService.Create(roleDTO);
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, $"----Something went wrong in the {nameof(Create)}");
+                return StatusCode(500, "Internal Server Error, please try later!");
+            }
+           
+        }
+
+        
 
         [HttpDelete]
         [Route("DeleteRole/{id}")]

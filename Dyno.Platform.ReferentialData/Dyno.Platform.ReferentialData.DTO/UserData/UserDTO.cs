@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.DTO.UserData
@@ -16,13 +17,20 @@ namespace Dyno.Platform.ReferentialData.DTO.UserData
     public class UserDTO : IdentityUser
     {
 
-        //public ICollection<IdentityUserClaim> Claims { get; set; }
-        [NotMapped]
-        public override DateTimeOffset? LockoutEnd { get; set; }
+        #region User Data
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public DateTime DateOfBirth { get; set; }
+        public Gender Gender { get; set; }
+        public string? Picture { get; set; }
+        #endregion
 
-        public IList<RoleDTO> Roles { get; set; }
-        public IList<AddressDTO> Addresses { get; set; }
-        public IList<BalanceDTO> Balances { get; set; }
+        #region Structure
+        [JsonIgnore]
+        public IList<RoleDTO>? Roles { get; set; }
+        public IList<AddressDTO>? Addresses { get; set; }
+        public IList<BalanceDTO>? Balances { get; set; }
+        #endregion
 
     }
 }

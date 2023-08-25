@@ -15,7 +15,8 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.Authentification
         public readonly IAuthentificationService _authentificationService;
         public readonly ILogger<AuthentificationController> _logger;
 
-        public AuthentificationController(ILogger<AuthentificationController> logger, IAuthentificationService authentificationService)
+        public AuthentificationController(ILogger<AuthentificationController> logger,
+            IAuthentificationService authentificationService)
         {
             _logger = logger;
             _authentificationService = authentificationService;

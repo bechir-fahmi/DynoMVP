@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "yY2v/qT3Dpob03ym3bZRC+5DkW4ZfjDHB+Mhx5ZgsPM=",
+  "Hash": "GYB+Q4QufNfIAjgyhoQtRMKsW/oBGE4l2cNex9e3j1o=",
   "Source": "Dyno.Platform.ReferentialData.WebApi",
   "BasePath": "_content/Dyno.Platform.ReferentialData.WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Dyno.Platform.ReferentialData.WebApi\\wwwroot",
+      "Source": "Dyno.Platform.ReferentialData.WebApi",
+      "ContentRoot": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\wwwroot\\",
+      "BasePath": "_content/Dyno.Platform.ReferentialData.WebApi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
       "Identity": "C:\\Users\\21692\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.4\\staticwebassets\\V5\\css\\site.css",

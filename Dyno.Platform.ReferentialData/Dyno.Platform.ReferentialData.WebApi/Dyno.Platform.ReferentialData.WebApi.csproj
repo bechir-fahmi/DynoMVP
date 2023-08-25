@@ -28,4 +28,8 @@
     <ProjectReference Include="..\Dyno.Platform.ReferentialData.Nhibernate\Dyno.Platform.ReferentialData.Nhibernate.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
