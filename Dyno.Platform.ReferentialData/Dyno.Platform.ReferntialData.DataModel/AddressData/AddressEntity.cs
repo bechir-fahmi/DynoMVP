@@ -9,7 +9,7 @@ namespace Dyno.Platform.ReferntialData.DataModel.AddressData
 {
     public class AddressEntity
     {
-        public virtual int Id { get; set; }
+        public virtual Guid Id { get; set; } = Guid.NewGuid();
         public virtual string? AddressName { get; set; }
         public virtual double Longitude { get; set; } 
         public virtual double Latitude { get; set; }

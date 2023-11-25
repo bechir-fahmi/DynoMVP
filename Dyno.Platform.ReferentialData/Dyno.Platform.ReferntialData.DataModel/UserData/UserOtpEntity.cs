@@ -1,27 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Platform.Shared.Enum;
 
 namespace Dyno.Platform.ReferntialData.DataModel.UserData
 {
     public class UserOtpEntity
     {
         
-        public virtual int Id {  get; set; }
-        //public virtual string? UserName { get; set; }
+        public virtual Guid Id {  get; set; }
         public virtual string? PhoneNumber{ get; set; }
         public virtual string? Code { get; set; }
-
-        public UserOtpEntity( string phoneNumber, string code) 
-        {
-            PhoneNumber = phoneNumber;
-            Code = code;
-        }
-
-
-       
+        public virtual  Status  Status { get; set; }
+        public virtual OtpType OtpType { get; set; }
     }
 }

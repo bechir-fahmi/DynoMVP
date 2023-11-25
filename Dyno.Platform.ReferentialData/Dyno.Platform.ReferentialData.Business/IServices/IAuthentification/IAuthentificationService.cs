@@ -1,4 +1,5 @@
 ﻿using Dyno.Platform.ReferentialData.DTO.AuthDTO;
+using Dyno.Platform.ReferentialData.DTO.UserData;
 using Microsoft.AspNetCore.Identity;
 using Platform.Shared.Result;
 using System;
@@ -12,10 +13,8 @@ namespace Dyno.Platform.ReferentialData.Business.IServices.IAuthentification
 {
     public interface IAuthentificationService
     {
-        Task<OperationResult> Login(LoginModelDTO loginModel);
-        Task<OperationResult> Register(RegisterModelDTO register);
-
-        MessageResource GetOtpVerificationCode (string phoneNumber);
-        Task GetPassword(string password);
+        Task<OperationResult<UserProfileDTO>> Login(LoginModelDTO loginModel);
+        Task<OperationResult<UserProfileDTO>> Register(RegisterModelDTO register);   
+        
     }
 }

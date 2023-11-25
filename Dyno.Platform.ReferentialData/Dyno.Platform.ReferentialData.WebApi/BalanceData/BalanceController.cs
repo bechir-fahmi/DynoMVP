@@ -21,7 +21,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.BalanceData
         [Route("GetAllBalances")]
         public IActionResult GetAllBalances()
         {
-            IList<BalanceDTO> balanceDTOs  = _balanceService.GetAllBalance();
+            IList<BalanceDTO> balanceDTOs  = _balanceService.GetAll();
             return Ok(balanceDTOs);
         }
 
@@ -38,7 +38,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.BalanceData
         [Route("CreateBalance")]
         public IActionResult CreateBalance([FromBody] BalanceDTO balance)
         {
-            _balanceService.CreateBalance(balance) ;
+            _balanceService.Create(balance) ;
             return Ok();
         }
 
@@ -46,15 +46,15 @@ namespace Dyno.Platform.ReferentialData.WebApi.BalanceData
         [Route("UpdateBalance")]
         public IActionResult UpdateBalance([FromBody] BalanceDTO balanceDTO)
         {
-            _balanceService.UpdateBalance(balanceDTO) ;
+            _balanceService.Update(balanceDTO) ;
             return Ok();
         }
 
         [HttpDelete]
         [Route("DeleteBalance/{balanceId}")]
-        public IActionResult DeleteBalance(int balanceId)
+        public IActionResult DeleteBalance(Guid balanceId)
         {
-            _balanceService.DeleteBalance(balanceId) ;
+            _balanceService.Delete(balanceId) ;
             return Ok();
         }
     }

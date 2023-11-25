@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace Platform.Shared.Result
 {
-    public class OperationResult
+    public class OperationResult<T>
     {
         public QueryResult Result { get; set; }
-
         public string? ExceptionMessage { get; set; }
-
-        public Dictionary<string, object>? ExtendedProperties { get; set; }
+        public T? ObjectValue { get; set; }
     }
 }

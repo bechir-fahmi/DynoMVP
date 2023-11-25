@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v7.0": {
       "Dyno.Platform.ReferntialData.DataModel/1.0.0": {
         "dependencies": {
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "Platform.Shared": "1.0.0"
         },
         "runtime": {
@@ -1016,6 +1015,9 @@
         }
       },
       "Platform.Shared/1.0.0": {
+        "dependencies": {
+          "NHibernate.AspNetCore.Identity": "7.0.1"
+        },
         "runtime": {
           "Platform.Shared.dll": {}
         }

@@ -3935,7 +3935,6 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "Dyno.Platform.ReferentialData.BusinessModel": "1.0.0",
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "Platform.Shared": "1.0.0"
         },
         "compile": {
@@ -3971,7 +3970,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "Platform.Shared": "1.0.0"
         },
         "compile": {
@@ -4022,6 +4020,9 @@
       "Platform.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NHibernate.AspNetCore.Identity": "7.0.1"
+        },
         "compile": {
           "bin/placeholder/Platform.Shared.dll": {}
         },
@@ -11399,11 +11400,9 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Dyno.Platform.ReferentialData.Business >= 1.0.0",
       "Dyno.Platform.ReferentialData.Nhibernate >= 1.0.0",
-      "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.UI >= 7.0.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.3",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
-      "NHibernate.AspNetCore.Identity >= 7.0.1",
       "NHibernate.NetCore >= 7.0.2",
       "Npgsql >= 7.0.4",
       "Platform.MicroserviceBase >= 1.0.0",
@@ -11419,11 +11418,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\Dyno.Platform.ReferentialData.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\Dyno.Platform.ReferentialData.WebApi.csproj",
       "projectName": "Dyno.Platform.ReferentialData.WebApi",
-      "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\Dyno.Platform.ReferentialData.WebApi.csproj",
+      "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\Dyno.Platform.ReferentialData.WebApi.csproj",
       "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11440,20 +11439,20 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Platform.MicroserviceBase\\Platform.MicroserviceBase\\Platform.MicroserviceBase.csproj"
             },
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Server.Kafka\\Server.Kafka\\Server.Kafka.csproj"
             },
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.DynoTools\\Service.WatchDog\\WatchDog\\WatchDog.csproj"
             },
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\Dyno.Platform.ReferentialData.Business.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\Dyno.Platform.ReferentialData.Business.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\Dyno.Platform.ReferentialData.Business.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Business\\Dyno.Platform.ReferentialData.Business.csproj"
             },
-            "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj": {
-              "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj"
+            "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj": {
+              "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Dyno.Platform.ReferentialData\\Dyno.Platform.ReferentialData.Nhibernate\\Dyno.Platform.ReferentialData.Nhibernate.csproj"
             }
           }
         }
@@ -11476,10 +11475,6 @@
             "target": "Package",
             "version": "[12.0.0, )"
           },
-          "Microsoft.AspNetCore.Identity": {
-            "target": "Package",
-            "version": "[2.2.0, )"
-          },
           "Microsoft.AspNetCore.Identity.UI": {
             "target": "Package",
             "version": "[7.0.4, )"
@@ -11491,10 +11486,6 @@
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[7.0.0, )"
-          },
-          "NHibernate.AspNetCore.Identity": {
-            "target": "Package",
-            "version": "[7.0.1, )"
           },
           "NHibernate.NetCore": {
             "target": "Package",

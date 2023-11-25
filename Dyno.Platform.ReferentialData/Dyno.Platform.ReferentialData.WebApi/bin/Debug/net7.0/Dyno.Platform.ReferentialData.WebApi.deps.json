@@ -12,11 +12,9 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Dyno.Platform.ReferentialData.Business": "1.0.0",
           "Dyno.Platform.ReferentialData.Nhibernate": "1.0.0",
-          "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.UI": "7.0.4",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "NHibernate.NetCore": "7.0.2",
           "Npgsql": "7.0.4",
           "Platform.MicroserviceBase": "1.0.0",
@@ -2127,7 +2125,6 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "Dyno.Platform.ReferentialData.BusinessModel": "1.0.0",
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "Platform.Shared": "1.0.0"
         },
         "runtime": {
@@ -2153,7 +2150,6 @@
       },
       "Dyno.Platform.ReferntialData.DataModel/1.0.0": {
         "dependencies": {
-          "NHibernate.AspNetCore.Identity": "7.0.1",
           "Platform.Shared": "1.0.0"
         },
         "runtime": {
@@ -2189,6 +2185,9 @@
         }
       },
       "Platform.Shared/1.0.0": {
+        "dependencies": {
+          "NHibernate.AspNetCore.Identity": "7.0.1"
+        },
         "runtime": {
           "Platform.Shared.dll": {}
         }

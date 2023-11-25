@@ -1,10 +1,12 @@
 ﻿using Dyno.Platform.ReferentialData.Business.IServices.IAuthentification;
 using Dyno.Platform.ReferentialData.DTO.AuthDTO;
+using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Platform.Shared.Result;
 
 namespace Dyno.Platform.ReferentialData.WebApi.Controllers.Authentification
 {
@@ -26,22 +28,16 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.Authentification
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginModelDTO modelDTO)
         {
-            var result = await _authentificationService.Login(modelDTO);
+            OperationResult<UserProfileDTO> result = await _authentificationService.Login(modelDTO);
             return Ok(result);
         }
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterModelDTO modelDTO) 
         {
-            var result= await _authentificationService.Register(modelDTO);
+            OperationResult<UserProfileDTO> result= await _authentificationService.Register(modelDTO);
             return Ok(result);
         }
-        [HttpPost]
-        [Route("SendOTP/{PhoneNumber}")]
-        public IActionResult SendOTP(string phoneNumber)
-        {
-            var result = _authentificationService.GetOtpVerificationCode(phoneNumber);
-            return Ok(result);
-        }
+        
     }
 }

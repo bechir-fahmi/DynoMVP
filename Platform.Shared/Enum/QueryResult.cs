@@ -9,6 +9,7 @@ namespace Platform.Shared.Enum
     public enum QueryResult
     {
         IsSucced=0, 
-        IsFailed=1
+        IsFailed=1,
+        UnAuthorized =2,
     }
 }

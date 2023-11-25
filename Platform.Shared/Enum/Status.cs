@@ -12,5 +12,6 @@ namespace Platform.Shared.Enum
         IsDeleted = 1,
         IsBlocked = 2,
         IsDesactive = 3,
+        InProgress = 4,
     }
 }

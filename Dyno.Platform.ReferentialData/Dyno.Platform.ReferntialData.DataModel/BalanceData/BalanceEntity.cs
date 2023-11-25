@@ -10,7 +10,7 @@ namespace Dyno.Platform.ReferntialData.DataModel.BalanceData
 {
     public class BalanceEntity
     {
-        public virtual int Id { get; set; }
+        public virtual Guid Id { get; set; }
         public virtual double Amount { get; set; }
         public virtual string Key { get; set; }
         public virtual Status Status { get; set; }

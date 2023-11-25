@@ -1,0 +1,15 @@
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\bin\Debug\net7.0\Dyno.Platform.Payment.DTO.exe
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\bin\Debug\net7.0\Dyno.Platform.Payment.DTO.deps.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\bin\Debug\net7.0\Dyno.Platform.Payment.DTO.runtimeconfig.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\bin\Debug\net7.0\Dyno.Platform.Payment.DTO.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\bin\Debug\net7.0\Dyno.Platform.Payment.DTO.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.csproj.AssemblyReference.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.AssemblyInfoInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.AssemblyInfo.cs
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.csproj.CoreCompileInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\refint\Dyno.Platform.Payment.DTO.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\Dyno.Platform.Payment.DTO.genruntimeconfig.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DTO\obj\Debug\net7.0\ref\Dyno.Platform.Payment.DTO.dll

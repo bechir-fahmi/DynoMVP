@@ -2,6 +2,7 @@
 using Dyno.Platform.ReferentialData.DTO.AddressData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Platform.Shared.Result;
 
 namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
 {
@@ -9,22 +10,38 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
     [ApiController]
     public class AddressController : ControllerBase
     {
-        public readonly IAddressService _addressService;
-        public AddressController(IAddressService addressService) 
+        private readonly IAddressService _addressService;
+        private readonly ILogger<AddressController> _logger;
+
+        public AddressController(IAddressService addressService,
+            ILogger<AddressController> logger) 
         {
             _addressService = addressService;
+            _logger = logger;
         }
 
         [HttpGet]
         [Route("GetAllAddress")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetAllAdress() 
         {
-            IList<AddressDTO> addressDTOs = _addressService.GetAllAddresses();
-            return Ok(addressDTOs);
+            try
+            {
+                List<AddressDTO> addressDTOs = _addressService.GetAll();
+                return Ok(addressDTOs);
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(GetAllAdress)}");
+                return StatusCode(500, "Internal server Error. Please try later");
+            }
+            
         }
 
         [HttpGet]
         [Route("GetAddressByUserId/{userId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetAdressByUserId(string userId)
         {
             IList<AddressDTO> addressDTOs = _addressService.GetAddressByUserId(userId);
@@ -33,6 +50,8 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
 
         [HttpGet]
         [Route("GetAddressByName/{addressName}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetAdressByName(string addressName)
         {
             AddressDTO addressDTOs = _addressService.GetAddressByName(addressName);
@@ -41,26 +60,58 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.AddressData
 
         [HttpPost]
         [Route("CreateAddress")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult CreateAdress([FromBody] AddressDTO addressDTO)
         {
-             _addressService.CreateAddress(addressDTO);
-            return Ok();
+            try
+            {
+                OperationResult<AddressDTO> result = _addressService.Create(addressDTO);
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(CreateAdress)}");
+                return StatusCode(500, "Internal server Error. Please try later");
+            }
+             
         }
 
         [HttpPut]
         [Route("UpdateAddress")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult UpdateAdress([FromBody] AddressDTO addressDTO)
         {
-            _addressService.UpdateAddress(addressDTO);
-            return Ok();
+            try
+            {
+                OperationResult<AddressDTO> result = _addressService.Update(addressDTO);
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(UpdateAdress)}");
+                return StatusCode(500, "Internal server Error. Please try later");
+            }
+            
         }
 
         [HttpDelete]
         [Route("DeleteAddress/{addressId}")]
-        public IActionResult DeleteAdress( int addressId)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult DeleteAdress(Guid addressId)
         {
-            _addressService.DeleteAddress(addressId);
-            return Ok();
+            try
+            {
+                OperationResult<AddressDTO> result = _addressService.Delete(addressId);
+                return Ok(result);
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(DeleteAdress)}");
+                return StatusCode(500, "Internal server Error. Please try later");
+            }
+            
         }
+
+       
     }
 }

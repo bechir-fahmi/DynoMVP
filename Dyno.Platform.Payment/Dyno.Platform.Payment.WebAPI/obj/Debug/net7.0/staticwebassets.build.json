@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "74H7HQuqtlShvqmj/OWq8rUmfCiW9CkQM3HER/26bhs=",
+  "Source": "Dyno.Platform.Payment.WebAPI",
+  "BasePath": "_content/Dyno.Platform.Payment.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,15 @@
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\bin\Debug\net7.0\Dyno.Platform.Payment.DataModel.exe
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\bin\Debug\net7.0\Dyno.Platform.Payment.DataModel.deps.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\bin\Debug\net7.0\Dyno.Platform.Payment.DataModel.runtimeconfig.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\bin\Debug\net7.0\Dyno.Platform.Payment.DataModel.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\bin\Debug\net7.0\Dyno.Platform.Payment.DataModel.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.csproj.AssemblyReference.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.AssemblyInfoInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.AssemblyInfo.cs
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.csproj.CoreCompileInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\refint\Dyno.Platform.Payment.DataModel.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\Dyno.Platform.Payment.DataModel.genruntimeconfig.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.DataModel\obj\Debug\net7.0\ref\Dyno.Platform.Payment.DataModel.dll

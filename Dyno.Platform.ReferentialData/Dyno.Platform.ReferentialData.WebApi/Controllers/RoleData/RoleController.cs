@@ -13,7 +13,7 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.RoleData
         public readonly IRoleService _roleService;
         public readonly ILogger<RoleController> _logger;
 
-        public RoleController(ILogger<RoleController> logger, IRoleService roleService) 
+        public RoleController(ILogger<RoleController> logger, IRoleService roleService)
         {
             _roleService = roleService;
             _logger = logger;
@@ -21,15 +21,15 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.RoleData
 
         [HttpGet]
         [Route("GetAllRole")]
-        public  IActionResult GetAll() 
+        public IActionResult GetAll()
         {
-           IList<RoleDTO> roleDTOs =  _roleService.GetAll();
+            IList<RoleDTO> roleDTOs = _roleService.GetAll();
             return Ok(roleDTOs);
         }
 
         [HttpGet]
         [Route("GetRoleById/{id}")]
-        public async Task<IActionResult> GetById(string id) 
+        public async Task<IActionResult> GetById(string id)
         {
             RoleDTO roleDTO = await _roleService.GetById(id);
             return Ok(roleDTO);
@@ -46,37 +46,50 @@ namespace Dyno.Platform.ReferentialData.WebApi.Controllers.RoleData
 
         [HttpPost]
         [Route("CreateRole")]
-        [ProducesResponseType(typeof(OperationResult), 200)]
+        [ProducesResponseType(typeof(OperationResult<RoleDTO>), 200)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Create([FromBody] RoleDTO roleDTO) 
+        public async Task<IActionResult> Create([FromBody] RoleDTO roleDTO)
         {
             try
             {
-                OperationResult result = await _roleService.Create(roleDTO);
+                OperationResult<RoleDTO> result = await _roleService.Create(roleDTO);
                 return Ok(result);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, $"----Something went wrong in the {nameof(Create)}");
                 return StatusCode(500, "Internal Server Error, please try later!");
             }
-           
+
         }
 
-        
+
 
         [HttpDelete]
         [Route("DeleteRole/{id}")]
-        public void DeleteById(string id) 
+        public void DeleteById(string id)
         {
-           _roleService.Delete(id);
+            _roleService.Delete(id);
         }
 
         [HttpPut]
         [Route("UpdateRole")]
-        public  async Task Update([FromBody] RoleDTO roleDTO) 
+        public async Task Update([FromBody] RoleDTO roleDTO)
         {
-             await _roleService.Update(roleDTO);
-            
+            await _roleService.Update(roleDTO);
+
         }
+
+        //[HttpGet]
+        //[Route("GetRole")]
+
+        //public async Task<IActionResult> GetByName()
+        //{
+        //    RoleDTO roleDTO = await _roleService
+        //    return Ok(roleDTO);
+        //}
+
+
+
     }
 }

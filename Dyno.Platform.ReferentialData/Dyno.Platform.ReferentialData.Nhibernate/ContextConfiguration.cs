@@ -21,6 +21,7 @@ using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
 using NHibernate.Tool.hbm2ddl;
 using NHibernate.Util;
+using Platform.Shared.Mapper;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace Dyno.Platform.ReferentialData.Nhibernate
@@ -36,14 +37,14 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             var mapper = new ModelMapper();
             mapper.AddMapping<UserMap>();
             mapper.AddMapping<RoleMap>();
-            mapper.AddMapping<UserRoleMap>();
             mapper.AddMapping<RoleClaimMap>();
             mapper.AddMapping<UserTokenMap>();
             mapper.AddMapping<UserLoginMap>();
             mapper.AddMapping<UserClaimMap>();
+            mapper.AddMapping<UserOtpMap>();
             mapper.AddMapping<AddressMap>();
             mapper.AddMapping<BalanceMap>();
-            mapper.AddMapping<TestMap>();
+            
            
            
 
@@ -85,10 +86,6 @@ namespace Dyno.Platform.ReferentialData.Nhibernate
             services.AddScoped(factory => 
             sessionFactory.OpenSession());
             services.AddScoped(typeof(IMapperSession<>), typeof(MapperSession<>));
-          
-                
-                
-
             return services;
         }
     }

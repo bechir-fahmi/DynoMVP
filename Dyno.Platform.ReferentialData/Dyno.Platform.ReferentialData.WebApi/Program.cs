@@ -29,6 +29,8 @@ using Dyno.Platform.ReferentialData.Business.IServices.IBalanceDataService;
 using Dyno.Platform.ReferentialData.Business.Services.BalanceDataService;
 using Dyno.Platform.ReferentialData.Business.IServices;
 using Dyno.Platform.ReferentialData.Business.Services;
+using Dyno.Platform.ReferentialData.Nhibernate.DefaultData;
+using Dyno.Platform.ReferentialData.WebApi.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -75,10 +77,10 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService,RoleService>();
 builder.Services.AddScoped<IUserClaimService, UserClaimService>();
 builder.Services.AddScoped<IRoleClaimService, RoleClaimService>();
+builder.Services.AddScoped<IUserOtpService, UserOtpService>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IBalanceService, BalanceService>();
-builder.Services.AddScoped<ITestService, TestService>();
 
 
 builder.Services.AddScoped<IUrlHelper>(x =>
@@ -88,7 +90,21 @@ builder.Services.AddScoped<IUrlHelper>(x =>
     return factory.GetUrlHelper(actionContext);
 
 });
+#endregion
 
+#region Default Data Service
+/*builder.Services.AddSingleton<DefaultRole>();
+
+using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+{
+    var roleInitializer = scope.ServiceProvider.GetRequiredService<DefaultRole>();
+    roleInitializer.InitializeDefaultRoles();
+}*/
+#endregion
+
+#region Authentification
+builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.AddSwaggerDoc();
 #endregion
 
 // Add services to the container.
@@ -98,9 +114,8 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+/*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -111,7 +126,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidAudience = JWTVariable.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JWTVariable.key))
     };
-});
+});*/
 
 var app = builder.Build();
 

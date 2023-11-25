@@ -1,0 +1,15 @@
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\bin\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.exe
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\bin\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.deps.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\bin\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.runtimeconfig.json
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\bin\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\bin\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.csproj.AssemblyReference.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.AssemblyInfoInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.AssemblyInfo.cs
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.csproj.CoreCompileInputs.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\refint\Dyno.Platform.Payment.Nhibernate.dll
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.pdb
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\Dyno.Platform.Payment.Nhibernate.genruntimeconfig.cache
+C:\Users\21692\Source\Repos\Bachirfahmi\Dyno.Platform\Dyno.Platform.Payment\Dyno.Platform.Payment.Nhibernate\obj\Debug\net7.0\ref\Dyno.Platform.Payment.Nhibernate.dll

@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Dyno.Platform.ReferentialData.BusinessModel.AddressData;
+using Dyno.Platform.ReferentialData.BusinessModel.BalanceData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserClaimData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserData;
 using Dyno.Platform.ReferentialData.BusinessModel.UserRole;
 using Dyno.Platform.ReferntialData.DataModel;
 using Dyno.Platform.ReferntialData.DataModel.AddressData;
+using Dyno.Platform.ReferntialData.DataModel.BalanceData;
 using Dyno.Platform.ReferntialData.DataModel.UserClaim;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
@@ -19,13 +21,26 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.Mapping
     public class MappingBMtoDM : Profile
     {
         public MappingBMtoDM() {
+
+            #region User Data
             CreateMap<User, UserEntity>().ReverseMap();
-            CreateMap<Address, AddressEntity>().ReverseMap();
             CreateMap<UserOtp, UserOtpEntity>().ReverseMap();
-            CreateMap<Role,RoleEntity>().ReverseMap();
             CreateMap<UserClaim, UserClaimEntity>().ReverseMap();
+            #endregion
+
+            #region Role Data
+            CreateMap<Role, RoleEntity>().ReverseMap();
             CreateMap<RoleClaim, RoleClaimEntity>().ReverseMap();
-            CreateMap<Test, TestData>().ReverseMap();
+            #endregion
+
+            #region Address
+            CreateMap<Address, AddressEntity>().ReverseMap();
+            #endregion
+
+            #region Balance 
+            CreateMap<Balance, BalanceEntity>().ReverseMap();
+            #endregion
+
         }
     }
 }

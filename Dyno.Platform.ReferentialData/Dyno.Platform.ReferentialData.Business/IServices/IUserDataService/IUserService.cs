@@ -1,5 +1,7 @@
 ﻿using Dyno.Platform.ReferentialData.DTO.UserData;
+using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Microsoft.AspNetCore.Identity;
+using Platform.Shared.GenericService;
 using Platform.Shared.Result;
 using System;
 using System.Collections.Generic;
@@ -9,16 +11,11 @@ using System.Threading.Tasks;
 
 namespace Dyno.Platform.ReferentialData.Business.IServices.IUserDataService
 {
-    public interface IUserService
+    public interface IUserService : IGenericAsyncService<UserDTO, UserEntity, string, UserDTO>
     {
-        List<UserDTO> GetAll();
-        Task<UserDTO> GetById(string id);
         Task<UserDTO> GetByUserName(string name);
         Task<UserDTO> GetByEmail(string email);
-        Task Create(UserDTO entity);
-        Task Update(UserDTO entity);
-        Task Delete(string id);
-        Task<OperationResult> UpdateUserInfo(UpdateUserDTO update);
-        Task<OperationResult> UpdateUserPassword(UpdatePasswordDTO updatePassword);
+        Task<OperationResult<UserDTO>> UpdateUserInfo(UpdateUserDTO update);
+        Task<OperationResult<UserDTO>> UpdateUserPassword(UpdatePasswordDTO updatePassword);
     }
 }

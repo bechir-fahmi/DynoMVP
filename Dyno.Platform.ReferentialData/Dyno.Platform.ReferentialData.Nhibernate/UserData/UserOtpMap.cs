@@ -17,15 +17,8 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
             Table("userOtps");
             Id(e => e.Id, id => {
                 id.Column("id");
-                id.Type(NHibernateUtil.Int32);
+                id.Type(NHibernateUtil.Guid);
             });
-
-            //Property(e => e.UserName, prop => {
-            //    prop.Column("user_name");
-            //    prop.Type(NHibernateUtil.String);
-            //    prop.Length(64);
-            //    prop.NotNullable(true);
-            //});
 
             Property(e => e.PhoneNumber, prop => {
                 prop.Column("phone_number");
@@ -40,11 +33,17 @@ namespace Dyno.Platform.ReferentialData.Nhibernate.UserData
                 prop.Unique(true);
             });
 
+            Property(e => e.Status, prop => {
+                prop.Column("status");
+                prop.Type(NHibernateUtil.Int32);
+                prop.NotNullable(false);
+            });
 
-
-
-
-
+            Property(e => e.OtpType, prop => {
+                prop.Column("otp_type");
+                prop.Type(NHibernateUtil.Int32);
+                prop.NotNullable(false);
+            });
         }
     }
 }

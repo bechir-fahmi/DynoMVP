@@ -13,7 +13,8 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.BalanceData
     {
         public  int Id { get; set; }
         public  double Amount { get; set; }
-        public string Key { get; set; }
+        public string? Key { get; set; }
+        public string? PublicAddress { get; set; }
         public  Status Status { get; set; }
         public User User { get; set; }
     }

@@ -28,7 +28,7 @@ namespace Dyno.Platform.ReferentialData.BusinessModel.UserData
         #endregion
 
         #region Structure
-        [JsonIgnore]
+        
         public IList<Role>? Roles { get; set; }
         public IList<Address>? Addresses { get; set; }
         public IList<Balance>? Balances { get; set; }

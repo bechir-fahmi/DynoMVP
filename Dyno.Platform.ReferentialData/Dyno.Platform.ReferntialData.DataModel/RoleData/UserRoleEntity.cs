@@ -1,4 +1,6 @@
-﻿using NHibernate.AspNetCore.Identity;
+﻿using Dyno.Platform.ReferntialData.DataModel.UserData;
+using Dyno.Platform.ReferntialData.DataModel.UserRole;
+using NHibernate.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

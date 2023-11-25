@@ -15,6 +15,7 @@ using Dyno.Platform.ReferentialData.Business.IServices.IUserDataService;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
 using Platform.Shared.Result;
 using Platform.Shared.Enum;
+using Platform.Shared.Mapper;
 
 namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
 {
@@ -28,13 +29,18 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
         
 
 
-        public UserService(IMapper mapper, UserManager<UserEntity> userManager, IMapperSession<UserEntity> mapperSession, RoleManager<RoleEntity> roleManager)
+        public UserService(IMapper mapper, 
+            UserManager<UserEntity> userManager, 
+            IMapperSession<UserEntity> mapperSession, 
+            RoleManager<RoleEntity> roleManager)
         {
             _mapperSession = mapperSession;
             _mapper = mapper;
             _userManager = userManager;
             _roleManager = roleManager;
         }
+
+        #region Get
         public List<UserDTO> GetAll()
         {
             List<UserEntity> userEntities = _userManager.Users.ToList();
@@ -57,7 +63,6 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
             UserDTO userDTO = _mapper.Map<UserDTO>(user);
             return userDTO;
         }
-
         
         public async Task<UserDTO> GetByUserName(string name)
         {
@@ -67,15 +72,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
             UserDTO userDTO = _mapper.Map<UserDTO>(user);
             return userDTO;
         }
-        public async Task Update(UserDTO userDTO)
-        {
-            User user = _mapper.Map<User>(userDTO);
-            UserEntity userEntity = _mapper.Map<UserEntity>(user);
 
-            //_mapperSession.Update(userEntity);
-            _userManager.UpdateAsync(userEntity);
-
-        }
         public async Task<UserDTO> GetByEmail(string email)
         {
 
@@ -83,73 +80,163 @@ namespace Dyno.Platform.ReferentialData.Business.Services.UserDataService
             User user = _mapper.Map<User>(userEntity);
             UserDTO userDTO = _mapper.Map<UserDTO>(user);
             return userDTO;
-        }
-        public async Task Create(UserDTO userDTO)
+        } 
+        #endregion
+
+        #region Create
+        public async Task<OperationResult<UserDTO>> Create(UserDTO userDTO)
         {
             User user = _mapper.Map<User>(userDTO);
             UserEntity userEntity = _mapper.Map<UserEntity>(user);
-            foreach (var entity in userDTO.Roles)
+            if(userDTO.Roles != null && userDTO.Roles.Count > 0)
             {
-                RoleEntity roleEntity = await _roleManager.FindByIdAsync(entity.Id);
-                userEntity.Roles.Add(roleEntity);
+                foreach (var entity in userDTO.Roles)
+                {
+                    RoleEntity? roleEntity = await _roleManager.FindByIdAsync(entity.Id);
+                    if (roleEntity != null)
+                    {
+                        userEntity.Roles.Add(roleEntity);
+                    }
+
+                    return new OperationResult<UserDTO>
+                    {
+                        Result = QueryResult.IsFailed,
+                        ExceptionMessage = "Role Unfound"
+                    };
+                }
+            }
+            if(userDTO.PasswordHash != null)
+            {
+                var result = await _userManager.CreateAsync(userEntity, userDTO.PasswordHash);
+                if (result.Succeeded)
+                    return new OperationResult<UserDTO>
+                    {
+                        Result = QueryResult.IsSucced,
+                        ExceptionMessage = "User Added Successfully"
+                    };
+                return new OperationResult<UserDTO>
+                {
+                    Result = QueryResult.IsFailed,
+                    ExceptionMessage = result.Errors.ToString()
+                };
 
             }
-            var result = await _userManager.CreateAsync(userEntity, userDTO.PasswordHash);
+
+            return new OperationResult<UserDTO>
+            {
+                Result = QueryResult.IsFailed,
+                ExceptionMessage = "Empty Password"
+            };
+                
         }
 
-        public async Task<OperationResult> UpdateUserInfo(UpdateUserDTO update)
+        #endregion
+
+        #region Update
+        public async Task<OperationResult<UserDTO>> Update(UserDTO userDTO)
         {
-            UserEntity userEntity = await _userManager.FindByIdAsync(update.Id);
-            if (userEntity != null) 
+            User user = _mapper.Map<User>(userDTO);
+            UserEntity userEntity = _mapper.Map<UserEntity>(user);
+            var result = await _userManager.UpdateAsync(userEntity);
+            if (result.Succeeded)
+                return new OperationResult<UserDTO>
+                {
+                    Result = QueryResult.IsSucced,
+                    ExceptionMessage = "User Updated Successfully"
+                };
+            return new OperationResult<UserDTO>
+            {
+                Result = QueryResult.IsFailed,
+                ExceptionMessage = result.Errors.ToString()
+            };
+        }
+
+        public async Task<OperationResult<UserDTO>> UpdateUserInfo(UpdateUserDTO update)
+        {
+            UserEntity? userEntity = await _userManager.FindByIdAsync(update.Id);
+            if (userEntity != null)
             {
                 userEntity.Email = update.Email;
-                userEntity.PhoneNumber= update.PhoneNumber;
+                userEntity.PhoneNumber = update.PhoneNumber;
                 var result = await _userManager.UpdateAsync(userEntity);
-                return new OperationResult
+                return new OperationResult<UserDTO>
                 {
-                    Result = QueryResult.IsSucceded,
+                    Result = QueryResult.IsSucced,
                     ExceptionMessage = "User is Updated"
                 };
 
             }
-            return new OperationResult
+            return new OperationResult<UserDTO>
             {
-                Result = QueryResult.IsFailed,
-                ExceptionMessage = "User is not exist"
+                Result = QueryResult.UnAuthorized,
+                ExceptionMessage = "User Unfound"
             };
         }
 
-        public async Task<OperationResult> UpdateUserPassword(UpdatePasswordDTO updatePassword)
+        public async Task<OperationResult<UserDTO>> UpdateUserPassword(UpdatePasswordDTO updatePassword)
 
         {
-            UserEntity userEntity = await _userManager.FindByIdAsync(updatePassword.Id);
-            IdentityResult result =await  _userManager.ChangePasswordAsync(userEntity, updatePassword.CurrentPassword, updatePassword.NewPassword);
-            
-            if(result.Succeeded) 
+            UserEntity? userEntity = await _userManager.FindByIdAsync(updatePassword.Id);
+            if (userEntity != null)
             {
-                
-                return new OperationResult
+                IdentityResult result = await _userManager.ChangePasswordAsync(userEntity, updatePassword.CurrentPassword, updatePassword.NewPassword);
+
+                if (result.Succeeded)
                 {
-                    Result = QueryResult.IsSucceded,
-                    ExceptionMessage = "Password Updated"
+
+                    return new OperationResult<UserDTO>
+                    {
+                        Result = QueryResult.IsSucced,
+                        ExceptionMessage = "Password Updated"
+                    };
+                }
+
+                return new OperationResult<UserDTO>
+                {
+                    Result = QueryResult.IsFailed,
+                    ExceptionMessage = "Current Password is wrong"
                 };
             }
-            
-            return new OperationResult
-            {
-                Result = QueryResult.IsFailed,
-                ExceptionMessage = "Current Password is wrong"
-            };
-        }
 
-        public async Task Delete(string id)
+            return new OperationResult<UserDTO>
+            {
+                Result = QueryResult.UnAuthorized,
+                ExceptionMessage = "User Unfound"
+            };
+
+        }
+        #endregion
+
+        #region Delete
+        public async Task<OperationResult<UserDTO>> Delete(string id)
         {
             var userEntity = await _userManager.FindByIdAsync(id);
             if (userEntity != null)
             {
-                _userManager.DeleteAsync(userEntity);
+                var result = await _userManager.DeleteAsync(userEntity);
+                if (result.Succeeded)
+                {
+                    return new OperationResult<UserDTO>
+                    {
+                        Result = QueryResult.IsSucced,
+                        ExceptionMessage = "User Deleted Successfully "
+                    };
+                }
+
+                return new OperationResult<UserDTO>
+                {
+                    Result = QueryResult.IsFailed,
+                    ExceptionMessage = result.Errors.ToString()
+                };
             }
 
+            return new OperationResult<UserDTO>
+            {
+                Result = QueryResult.UnAuthorized,
+                ExceptionMessage = "User Unfound"
+            };
+
         }
+        #endregion
     }
 }

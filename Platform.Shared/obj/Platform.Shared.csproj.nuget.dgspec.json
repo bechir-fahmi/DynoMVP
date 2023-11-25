@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj": {}
+    "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj": {
+    "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj",
         "projectName": "Platform.Shared",
-        "projectPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj",
+        "projectPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\Platform.Shared.csproj",
         "packagesPath": "C:\\Users\\21692\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\21692\\source\\repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\obj\\",
+        "outputPath": "C:\\Users\\21692\\Source\\Repos\\Bachirfahmi\\Dyno.Platform\\Platform.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\21692\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "NHibernate.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -9,7 +9,6 @@ using System.Text.Json.Serialization;
 namespace Dyno.Platform.ReferntialData.DataModel.UserData
 {
     
-
     public class UserEntity : IdentityUser
     {
         [NotMapped]
@@ -24,7 +23,6 @@ namespace Dyno.Platform.ReferntialData.DataModel.UserData
         #endregion
 
         #region Structure
-        [JsonIgnore]
         public virtual IList<RoleEntity>? Roles { get; set; }
         public virtual IList<AddressEntity>? Addresses { get; set; }
         public virtual IList<BalanceEntity>? Balances { get; set; }

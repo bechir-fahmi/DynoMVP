@@ -7,6 +7,7 @@ using Dyno.Platform.ReferentialData.DTO.AuthDTO;
 using Dyno.Platform.ReferentialData.DTO.UserClaimData;
 using Dyno.Platform.ReferentialData.DTO.UserData;
 using Dyno.Platform.ReferentialData.Nhibernate;
+using Dyno.Platform.ReferntialData.DataModel.RoleData;
 using Dyno.Platform.ReferntialData.DataModel.UserClaim;
 using Dyno.Platform.ReferntialData.DataModel.UserData;
 using Dyno.Platform.ReferntialData.DataModel.UserRole;
@@ -17,6 +18,7 @@ using Npgsql;
 using Org.BouncyCastle.Asn1.Crmf;
 using Platform.Shared.Enum;
 using Platform.Shared.EnvironmentVariable;
+using Platform.Shared.Mapper;
 using Platform.Shared.Result;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -35,9 +37,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.Authentification
         public readonly RoleManager<RoleEntity> _roleManager;
 
         private readonly IMapperSession<UserEntity> _mapperSession;
-        private readonly IMapperSession<UserOtpEntity> _mapperSessionOtp;
-        private readonly IMapperSession<UserRoleEntity> _mapperSessionUserRole;
-        
+        private readonly IMapperSession<UserOtpEntity> _mapperSessionOtp;        
         private readonly IMapper _mapper;
         private readonly ILogger<AuthentificationService> _logger;
 
@@ -47,7 +47,6 @@ namespace Dyno.Platform.ReferentialData.Business.Services.Authentification
             RoleManager<RoleEntity> roleManager,                        
             IMapperSession<UserEntity> mapperSession,             
             IMapperSession<UserOtpEntity> mapperSessionOtp,
-            IMapperSession<UserRoleEntity> mapperSessionUserRole,
             IMapper mapper,
             ILogger<AuthentificationService> logger)
         {
@@ -57,65 +56,56 @@ namespace Dyno.Platform.ReferentialData.Business.Services.Authentification
 
             _mapperSession = mapperSession;
             _mapperSessionOtp = mapperSessionOtp;
-            _mapperSessionUserRole = mapperSessionUserRole;
 
             _mapper = mapper;
             _logger = logger;
         }
 
-        public async Task<OperationResult> Login(LoginModelDTO loginModelDTO)
+        public async Task<OperationResult<UserProfileDTO>> Login(LoginModelDTO loginModelDTO)
         {
-            UserEntity userEntity = await _userManager.FindByNameAsync(loginModelDTO.UserName);
+            UserEntity? userEntity = await _userManager.FindByNameAsync(loginModelDTO.UserName);
             if (userEntity != null)
             {
-
-                //IList<string> userRole = await _userManager.GetRolesAsync(userEntity);
-                //foreach (var role in userRole)
-                //{
-                //    RoleEntity roleEntity = (RoleEntity)Convert.ChangeType(role, typeof(RoleEntity));
-                //    userEntity.Roles.Add(roleEntity);
-                //}
-
                 var accessToken = GenerateToken(userEntity);
                 var refreshToken = GenerateRefreshToken();
 
-                return new OperationResult
+                return new OperationResult<UserProfileDTO>
                 {
                     Result = QueryResult.IsSucced,
                     ExceptionMessage = "No error",
-                    ExtendedProperties = new Dictionary<string, object>()
+                    ObjectValue = new UserProfileDTO
                     {
-                        {"AccessToken", accessToken},
-                        {"RefreshToken", refreshToken},
-                        {"RefreshTokenExpired", DateTime.Now.AddDays(Convert.ToDouble(JWTVariable.RefreshTokenExpired)) },
-                        {"id",userEntity.Id},{"firstname",userEntity.FirstName},{"lastname",userEntity.LastName},{"username",userEntity.UserName},{"email",userEntity.Email},
-                        {"picture",userEntity.Picture},{"balance",userEntity.Balances},
-                        {"adresse",userEntity.Addresses}
-
-
+                        FirstName = userEntity.FirstName,
+                        LastName = userEntity.LastName,
+                        Gender = userEntity.Gender,
+                        DateOfBirth = userEntity.DateOfBirth,
+                        Picture = userEntity.Picture,
+                        Token = accessToken,
+                        RefreshToken = refreshToken,
+                        ExpiredDate = DateTime.Now.AddDays(Convert.ToDouble(JWTVariable.RefreshTokenExpired))
                     }
                 };
             }
             else
             {
-                return new OperationResult
+                return new OperationResult<UserProfileDTO>
                 {
                     Result = QueryResult.IsFailed,
-                    ExceptionMessage = "user n'existe pas"
+                    ExceptionMessage = "User n'existe pas"
                 };
             }
 
         }
 
-        public async Task<OperationResult> Register(RegisterModelDTO register)
+        public async Task<OperationResult<UserProfileDTO>> Register(RegisterModelDTO register)
         {
             RoleEntity? roleEntity = await _roleManager.FindByNameAsync(RoleName.Client.ToString());
             if (roleEntity == null)
             {
-                return new OperationResult
+                return new OperationResult<UserProfileDTO>
                 {
                     Result = QueryResult.IsFailed,
-                    ExceptionMessage = "The Role Client not exist"
+                    ExceptionMessage = "The Role Client Unfound"
                 };
             }
             List<UserEntity> userEntities = _mapperSession.GetAllByExpression(User => User.PhoneNumber == register.PhoneNumber);
@@ -123,26 +113,26 @@ namespace Dyno.Platform.ReferentialData.Business.Services.Authentification
             {
                 foreach (var entity in userEntities)
                 {
-                    UserRoleEntity? userRoleEnity = _mapperSessionUserRole.GetByExpression(UserRole => UserRole.UserId == entity.Id && UserRole.RoleId == roleEntity.Id);
-                    if (userRoleEnity != null)
+                    foreach(RoleEntity role in entity.Roles)
                     {
-                        return new OperationResult
+                        if(role.Name == RoleName.Client.ToString())
                         {
-                            Result = QueryResult.IsFailed,
-                            ExceptionMessage = "This phone number exist"
-                        };
+                            return new OperationResult<UserProfileDTO>
+                            {
+                                Result = QueryResult.IsFailed,
+                                ExceptionMessage = "This phone number used by other client"
+                            };
+                        }
                     }
+                    
                 }
             }
             User user = _mapper.Map<User>(register);
             UserEntity userEntity = _mapper.Map<UserEntity>(user);
             userEntity.Id = Guid.NewGuid().ToString();
+            userEntity.Roles.Add(roleEntity);
             var result = await _userManager.CreateAsync(userEntity, register.Password);
-            if (result.Succeeded)
-            {
-                _mapperSessionUserRole.Add(new UserRoleEntity { UserId = userEntity.Id, RoleId = roleEntity.Id });
-            }
-            return new OperationResult
+            return new OperationResult<UserProfileDTO>
             {
                 Result = result.Succeeded ? QueryResult.IsSucced : QueryResult.IsFailed,
                 ExceptionMessage = !result.Succeeded ? result.Errors.ToList()[0].Description : null
@@ -177,34 +167,7 @@ namespace Dyno.Platform.ReferentialData.Business.Services.Authentification
         {
             return Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
 
-        }
+        }  
         
-        
-        private string GenerateOTP() 
-        {
-            //Random random = new Random();
-            //int otps=random.Next(100000,999999);
-            //return otps.ToString("D6");
-            return "5656";
-        }
-
-        public MessageResource GetOtpVerificationCode(string phoneNumber)
-        {
-            TwilioClient.Init(TwilioVariable.AccountSID, TwilioVariable.AuthToken);
-            string Code = this.GenerateOTP();
-            UserOtpEntity userOtpEntity = new UserOtpEntity(phoneNumber, Code);
-            _mapperSessionOtp.Add(userOtpEntity);
-            var result = MessageResource.Create(
-                body: Code,
-                from: new Twilio.Types.PhoneNumber(TwilioVariable.TwilioPhone),
-                to: phoneNumber
-                );
-            return result;
-        }
-         
-        public Task GetPassword(string password)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
